@@ -62,7 +62,7 @@ export default {
       </p>
       <div class="flex justify-center sm:block">
         <a
-          :href="$i18n.locale == 'pt-BR' ?'/lfxa-pt.pdf':'/lfxa-en.pdf'"
+          :href="$i18n.locale == 'pt-BR' ?'/LFXA-pt.pdf':'/LFXA-en.pdf'"
           download=""
           class="
             flex
