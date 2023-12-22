@@ -6,6 +6,9 @@ frontend:
         - yarn install
         - yarn run build
   artifacts:
-    baseDirectory: build
+    baseDirectory: '.output/public'
     files:
       - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
