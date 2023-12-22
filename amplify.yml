@@ -6,7 +6,7 @@ frontend:
         - yarn install
     build:
       commands:
-        - yarn generate
+        - yarn build
   artifacts:
     baseDirectory: '.output/public'
     files:

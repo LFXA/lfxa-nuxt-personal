@@ -8,13 +8,6 @@ export default defineNuxtConfig({
     }
   },
   ssr: true,
-  nitro: {
-    baseURL: "http://localhost:8000",
-    prerender: {
-      crawlLinks: true,
-      failOnError: false, 
-    },
-  },
   colorMode: {
     classSuffix: '',
     preference: 'dark'
