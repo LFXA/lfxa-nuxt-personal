@@ -23,16 +23,14 @@ export default {
 const localePath = useLocalePath()
 </script>
 <template>
-  <nav id="nav" class="sm:container sticky top-0 sm:mx-auto bg-slate-200 dark:bg-secondary-dark">
+  <nav id="nav" class="sticky top-0 bg-slate-200 dark:bg-secondary-dark">
     <!-- Header -->
     <div
       class="
         z-10
-        max-w-screen-lg
-        xl:max-w-screen-xl
         block
         sm:flex sm:justify-between sm:items-center
-        py-6
+        px-12
       "
     >
       <!-- Header menu links and small screen hamburger menu -->

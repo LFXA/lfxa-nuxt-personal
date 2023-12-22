@@ -19,7 +19,7 @@ export default {
     <div
       class="
         pt-10
-        pb-4
+        p-4
         border-t-1 border-primary-light
         dark:border-secondary-dark
         bg-slate-200
