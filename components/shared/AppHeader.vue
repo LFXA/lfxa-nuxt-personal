@@ -30,7 +30,7 @@ const localePath = useLocalePath()
         z-10
         block
         sm:flex sm:justify-between sm:items-center
-        px-12
+        px-8
       "
     >
       <!-- Header menu links and small screen hamburger menu -->
@@ -138,7 +138,7 @@ const localePath = useLocalePath()
           @click="themeSwitcher"
           class="
             sm:hidden
-            ml-8
+            m-3
             bg-primary-light
             dark:bg-ternary-dark
             shadow-sm
@@ -206,27 +206,16 @@ const localePath = useLocalePath()
       <AppNavigation
         :isOpen="isOpen" />
 
+        
+
       <!-- Header right section buttons -->
  
       <div class="hidden sm:flex justify-between items-center flex-col md:flex-row">
         <!-- Theme switcher large screen -->
-      <select @change="$i18n.setLocale($event.target.value)" 
-      class="content-wrapper bg-primary-light
-            dark:bg-ternary-dark text-ternary-dark  
-                dark:text-ternary-light
-                dark:hover:text-primary-light" >
-      <option
-        v-for="local in $i18n.locales"
-        :key="local.code"
-        :value="local.code"
-        :selected="$i18n.locale == local.code">
-        {{ $t(local.name) }}
-      </option>
-    </select>
         <button
           @click="themeSwitcher"
           class="
-            sm:ml-6
+            m-6
             bg-primary-light
             dark:bg-ternary-dark
             w-8
@@ -254,6 +243,21 @@ const localePath = useLocalePath()
             v-else
             :icon="['fas', 'sun']" class="text-xl w-4 sm:w-4 h-3 sm:h-2"/>
         </button>
+
+      <select @change="$i18n.setLocale($event.target.value)" 
+      class="content-wrapper bg-primary-light
+            dark:bg-ternary-dark text-ternary-dark  
+                dark:text-ternary-light
+                dark:hover:text-primary-light" >
+      <option
+        v-for="local in $i18n.locales"
+        :key="local.code"
+        :value="local.code"
+        :selected="$i18n.locale == local.code">
+        {{ $t(local.name) }}
+      </option>
+    </select>
+       
       </div>
     </div>
   </nav>
