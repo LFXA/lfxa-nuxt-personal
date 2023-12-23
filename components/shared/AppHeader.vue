@@ -1,27 +1,3 @@
-<script>
-import AppNavigation from "./AppNavigation.vue";
-
-export default {
-  components: {
-    AppNavigation,
-  },
-  
-  data: () => {
-    return {
-      isOpen: false    
-    };
-  },
-  methods: {
-    themeSwitcher() {
-      useColorMode().preference =
-      useColorMode().value == "light" ? "dark" : "light";
-    },
-  },
-};
-</script>
-<script setup>
-const localePath = useLocalePath()
-</script>
 <template>
   <nav id="nav" class="sticky top-0 bg-slate-200 dark:bg-secondary-dark">
     <!-- Header -->
@@ -262,3 +238,27 @@ const localePath = useLocalePath()
     </div>
   </nav>
 </template>
+<script setup>
+const localePath = useLocalePath()
+</script>
+<script>
+import AppNavigation from "./AppNavigation.vue";
+
+export default {
+  components: {
+    AppNavigation,
+  },
+  
+  data: () => {
+    return {
+      isOpen: false    
+    };
+  },
+  methods: {
+    themeSwitcher() {
+      useColorMode().preference =
+      useColorMode().value == "light" ? "dark" : "light";
+    },
+  },
+};
+</script>
