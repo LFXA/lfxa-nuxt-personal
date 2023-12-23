@@ -58,9 +58,6 @@ const localePath = useLocalePath()
         sm:mx-4
         mb-2
         sm:py-2
-        border-t-2
-        pt-3
-        sm:pt-2 sm:border-t-0
         border-primary-light
         dark:border-secondary-dark"
         :class="{'nuxt-link-active': isRouteActive($t('menu.about')) }"
