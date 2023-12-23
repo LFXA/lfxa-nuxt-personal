@@ -44,7 +44,9 @@ export default {
               shadow-sm
               p-3
               duration-500">
+              <client-only>
               <font-awesome-icon :icon="['fab', social.icon]" class="text-xl w-4 sm:w-4 h-3 sm:h-2"/>
+            </client-only>
           </a>
         </ul>
       </div>

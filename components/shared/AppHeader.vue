@@ -121,7 +121,7 @@
             rounded-xl
             cursor-pointer"
             :class="[
-              $colorMode.value == 'light' ? 
+              colorMode.value == 'light' ? 
                `text-liText-ternary-dark
                 hover:text-gray-400
                 dark:text-liText-ternary-light
@@ -132,20 +132,21 @@
             ]"
         >
           <!-- Dark mode icon -->
+          <client-only>
           <font-awesome-icon
-            v-if="$colorMode.value == 'light'"
+            v-if="colorMode.value == 'light'"
             icon="moon"/>
           <!-- Light mode icon -->
           <font-awesome-icon
             v-else
             icon="sun"/>
-
+          </client-only>
         </button>
 
         <!-- Small screen hamburger menu -->
         <div class="sm:hidden">
           <button
-            @click="isOpen = !isOpen"
+            @click="openMenu()"
             type="button"
             class="focus:outline-none"
             aria-label="Hamburger Menu"
@@ -182,10 +183,7 @@
       <AppNavigation
         :isOpen="isOpen" />
 
-        
-
-      <!-- Header right section buttons -->
- 
+      <!-- Header right section buttons --> 
       <div class="hidden sm:flex justify-between items-center flex-col md:flex-row">
         <!-- Theme switcher large screen -->
         <button
@@ -202,7 +200,7 @@
             rounded-lg
             cursor-pointer"
           :class="(
-              $colorMode.value == 'light' ? 
+              colorMode.value == 'light' ? 
                `text-liText-ternary-dark
                 hover:text-gray-400
                 dark:text-liText-ternary-light
@@ -210,14 +208,16 @@
                 w-6
                 h-6` : 'text-gray-200 hover:text-gray-50 w-6 h-6')">
           <!-- Dark mode icon -->
+          <client-only>
           <font-awesome-icon
-            v-if="$colorMode.value == 'light'"
+            v-if="colorMode.value == 'light'"
             icon="moon" class="text-xl w-4 sm:w-4 h-3 sm:h-2"/>
 
           <!-- Light mode icon -->
           <font-awesome-icon
             v-else
             icon="sun" class="text-xl w-4 sm:w-4 h-3 sm:h-2"/>
+            </client-only>
         </button>
 
       <select @change="$i18n.setLocale($event.target.value)" 
@@ -239,7 +239,8 @@
   </nav>
 </template>
 <script setup>
-const localePath = useLocalePath()
+const localePath = useLocalePath();
+const colorMode  = useColorMode();
 </script>
 <script>
 import AppNavigation from "./AppNavigation.vue";
@@ -259,6 +260,9 @@ export default {
       useColorMode().preference =
       useColorMode().value == "light" ? "dark" : "light";
     },
+    openMenu(){
+      this.isOpen = !this.isOpen;
+    }
   },
 };
 </script>
