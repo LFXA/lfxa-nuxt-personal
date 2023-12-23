@@ -134,11 +134,11 @@
           <!-- Dark mode icon -->
           <font-awesome-icon
             v-if="$colorMode.value == 'light'"
-            :icon="['fas', 'moon']"/>
+            icon="moon"/>
           <!-- Light mode icon -->
           <font-awesome-icon
             v-else
-            :icon="['fas', 'sun']"/>
+            icon="sun"/>
 
         </button>
 
@@ -212,12 +212,12 @@
           <!-- Dark mode icon -->
           <font-awesome-icon
             v-if="$colorMode.value == 'light'"
-            :icon="['fas', 'moon']" class="text-xl w-4 sm:w-4 h-3 sm:h-2"/>
+            icon="moon" class="text-xl w-4 sm:w-4 h-3 sm:h-2"/>
 
           <!-- Light mode icon -->
           <font-awesome-icon
             v-else
-            :icon="['fas', 'sun']" class="text-xl w-4 sm:w-4 h-3 sm:h-2"/>
+            icon="sun" class="text-xl w-4 sm:w-4 h-3 sm:h-2"/>
         </button>
 
       <select @change="$i18n.setLocale($event.target.value)" 

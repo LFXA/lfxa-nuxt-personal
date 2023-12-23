@@ -29,6 +29,9 @@ export default defineNuxtConfig({
   },
   css: ['@/assets/app.css', '@fortawesome/fontawesome-svg-core/styles.css'],
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/i18n', 'nuxt-icon'],
+  plugins: [
+    { src: '@/plugins/fontawesome.js' },
+  ],
   i18n: {
     customRoutes: 'config',   // disable custom route with page components
     pages: {
