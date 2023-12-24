@@ -85,8 +85,7 @@ export default {
             hover:bg-indigo-500
             text-gray-500
             hover:text-white
-            duration-500
-          "
+            duration-500"
           aria-label="Download Resume"
         >
           <i

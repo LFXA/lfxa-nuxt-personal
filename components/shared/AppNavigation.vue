@@ -1,20 +1,3 @@
-<script>
-export default {
-  props: ["isOpen"],
-  methods: {
-    isRouteActive(id) {
-      if (this.$route.path.includes(id.toLowerCase())) {
-        return true
-      } else {
-        return false
-      }
-    }
-}
-};
-</script>
-<script setup>
-const localePath = useLocalePath()
-</script>
 <template>
   <!-- App header navigation links -->
   <div
@@ -62,11 +45,27 @@ const localePath = useLocalePath()
         dark:border-secondary-dark"
         :class="{'nuxt-link-active': isRouteActive($t('menu.about')) }"
       :aria-label="$t('menu.about')"
-      >{{$t('menu.about')}}</NuxtLink 
-    >
+      >{{$t('menu.about')}}</NuxtLink>
+
   </div>
 </template>
-
+<script>
+export default {
+  props: ["isOpen"],
+  methods: {
+    isRouteActive(id) {
+      if (this.$route.path.includes(id.toLowerCase())) {
+        return true
+      } else {
+        return false
+      }
+    }
+}
+};
+</script>
+<script setup>
+const localePath = useLocalePath()
+</script>
 <style>
 #nav .nuxt-link-exact-active,
 #nav .nuxt-link-active {
