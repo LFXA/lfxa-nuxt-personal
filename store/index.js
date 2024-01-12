@@ -33,7 +33,7 @@ const state = () => ({
       id: uuidv4(),
       name: "GitHub",
       icon: "github",
-      url: "https://github.com/LucasFelixAquino",
+      url: "https://github.com/LFXA",
     },
     {
       id: uuidv4(),
@@ -45,7 +45,7 @@ const state = () => ({
       id: uuidv4(),
       name: "SatckOverflow",
       icon: "stack-overflow",
-      url: "https://stackoverflow.com/users/11226027/lucas-felix-aquino",
+      url: "https://stackoverflow.com/users/11226027/lfxa",
     },
     {
       id: uuidv4(),
