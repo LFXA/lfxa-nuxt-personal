@@ -4,13 +4,13 @@ export default defineNuxtConfig({
     enabled: true,
 
     timeline: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
   ssr: true,
   colorMode: {
-    classSuffix: '',
-    preference: 'dark'
+    classSuffix: "",
+    preference: "dark",
   },
   app: {
     head: {
@@ -25,33 +25,36 @@ export default defineNuxtConfig({
         { name: "format-detection", content: "telephone=no" },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    }
+    },
   },
-  css: ['@/assets/app.css', '@fortawesome/fontawesome-svg-core/styles.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/i18n', 'nuxt-icon'],
-  plugins: [
-    { src: '@/plugins/fontawesome.js' },
+  css: ["@/assets/app.css", "@fortawesome/fontawesome-svg-core/styles.css"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/i18n",
+    "nuxt-icon",
   ],
+  plugins: [{ src: "@/plugins/fontawesome.js" }],
   i18n: {
-    customRoutes: 'config',   // disable custom route with page components
+    customRoutes: "config", // disable custom route with page components
     pages: {
       about: {
-        "pt-BR": '/sobre',
+        "pt-BR": "/sobre",
       },
       projects: {
-        "pt-BR": '/projetos'
-      }
+        "pt-BR": "/projetos",
+      },
     },
     locales: [
       {
-        code: 'en-US',
-        name: 'menu.english'
+        code: "en-US",
+        name: "menu.english",
       },
       {
-        code: 'pt-BR',
-        name: 'menu.portuguese'
-      }
+        code: "pt-BR",
+        name: "menu.portuguese",
+      },
     ],
-    vueI18n: './i18n.config.ts'
-  }
-})
+    vueI18n: "./i18n.config.ts",
+  },
+});

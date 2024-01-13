@@ -1,13 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
-import { createStore } from 'vuex';
-import { aboutMeTools } from './aboutMeTools.js'
+import { createStore } from "vuex";
+import { aboutMeTools } from "./aboutMeTools.js";
 
 const state = () => ({
   projectsHeading: "Projects Portfolio",
   projectsDescription: "Some of the projects I have successfully completed",
-  projects: [
-
-  ],
+  projects: [],
   aboutMe: [
     {
       id: uuidv4(),
@@ -26,7 +24,7 @@ const state = () => ({
       bio: "about.text4",
     },
   ],
-  aboutMeTools: aboutMeTools,
+  aboutMeTools,
   copyrightDate: new Date().getFullYear(),
   socialProfiles: [
     {
@@ -58,14 +56,14 @@ const state = () => ({
       name: "Dev.to",
       icon: "dev",
       url: "https://dev.to/lfxa",
-    }
+    },
   ],
   categories: [],
 });
 
 const getters = {
   getProjectById: (state) => (id) => {
-    return state.projects.find((project) => project.id == id);
+    return state.projects.find((project) => project.id === id);
   },
 };
 
@@ -81,5 +79,5 @@ export default createStore({
   state,
   mutations,
   actions,
-  getters
-})
+  getters,
+});

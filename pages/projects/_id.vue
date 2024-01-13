@@ -2,6 +2,7 @@
 import feather from "feather-icons";
 import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
 export default {
+  components: { ProjectRelatedProjects },
   scrollToTop: true,
   data: () => {
     return {
@@ -19,7 +20,6 @@ export default {
   updated() {
     feather.replace();
   },
-  components: { ProjectRelatedProjects },
 };
 </script>
 
@@ -30,17 +30,7 @@ export default {
       <!-- Project heading and meta info -->
       <div>
         <p
-          class="
-            font-general-medium
-            text-left text-3xl
-            sm:text-4xl
-            font-bold
-            text-primary-dark
-            dark:text-primary-light
-            mt-14
-            sm:mt-20
-            mb-7
-          "
+          class="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7"
         >
           {{ project.title }}
         </p>
@@ -51,13 +41,7 @@ export default {
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             ></i>
             <span
-              class="
-                font-general-medium
-                ml-2
-                leading-none
-                text-primary-dark
-                dark:text-primary-light
-              "
+              class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ project.publishDate }}</span
             >
           </div>
@@ -67,13 +51,7 @@ export default {
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             ></i>
             <span
-              class="
-                font-general-medium
-                ml-2
-                leading-none
-                text-primary-dark
-                dark:text-primary-light
-              "
+              class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ project.tag }}</span
             >
           </div>
@@ -83,9 +61,9 @@ export default {
       <!-- Project gallery -->
       <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
         <div
-          class="mb-10 sm:mb-0"
           v-for="projectImage in project.projectImages"
           :key="projectImage.id"
+          class="mb-10 sm:mb-0"
         >
           <img
             :src="projectImage.img"
@@ -101,12 +79,7 @@ export default {
           <!-- Single project client details -->
           <div class="mb-7">
             <p
-              class="
-                font-general-medium
-                text-2xl text-secondary-dark
-                dark:text-secondary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2"
             >
               {{ project.clientTitle }}
             </p>
@@ -114,11 +87,7 @@ export default {
               <li
                 v-for="info in project.companyInfos"
                 :key="info.id"
-                class="
-                  font-general-regular
-                  text-ternary-dark
-                  dark:text-ternary-light
-                "
+                class="font-general-regular text-ternary-dark dark:text-ternary-light"
               >
                 <span>{{ info.title }}: </span>
                 <a
@@ -138,21 +107,12 @@ export default {
           <!-- Single project objectives -->
           <div class="mb-7">
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.objectivesTitle }}
             </p>
             <p
-              class="
-                font-general-regular
-                text-primary-dark
-                dark:text-ternary-light
-              "
+              class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
               {{ project.objectivesDetails }}
             </p>
@@ -161,21 +121,12 @@ export default {
           <!-- Single project technologies -->
           <div class="mb-7">
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.techTitle }}
             </p>
             <p
-              class="
-                font-general-regular
-                text-primary-dark
-                dark:text-ternary-light
-              "
+              class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
               {{ project.technologies.join(", ") }}
             </p>
@@ -184,12 +135,7 @@ export default {
           <!-- Single project social sharing -->
           <div>
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.socialTitle }}
             </p>
@@ -200,17 +146,7 @@ export default {
                 :href="social.url"
                 target="__blank"
                 aria-label="Share Project"
-                class="
-                  bg-ternary-light
-                  dark:bg-ternary-dark
-                  text-gray-400
-                  hover:text-primary-dark
-                  dark:hover:text-primary-light
-                  p-2
-                  rounded-lg
-                  shadow-sm
-                  duration-500
-                "
+                class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
                 ><i
                   :data-feather="social.icon"
                   class="w-4 lg:w-5 h-4 lg:h-5"
@@ -223,26 +159,14 @@ export default {
         <!-- Single project right section details -->
         <div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
           <p
-            class="
-              font-general-medium
-              text-primary-dark
-              dark:text-primary-light
-              text-2xl
-              font-bold
-              mb-7
-            "
+            class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
             {{ project.detailsTitle }}
           </p>
           <p
             v-for="projectDetail in project.projectDetails"
             :key="projectDetail.id"
-            class="
-              font-general-regular
-              mb-5
-              text-lg text-ternary-dark
-              dark:text-ternary-light
-            "
+            class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
           >
             {{ projectDetail.details }}
           </p>

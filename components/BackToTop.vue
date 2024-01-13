@@ -3,24 +3,7 @@
   <transition name="fade">
     <div
       v-show="isScrolled"
-      class="
-        transition
-        duration-500
-        transform
-        hover:scale-110
-        rounded-full
-        cursor-pointer
-        flex
-        p-2
-        bg-indigo-500
-        hover:bg-indigo-600
-        text-white
-        items-center
-        hover:shadow-sm
-        border-none
-        ring-none
-        outline-none
-      "
+      class="transition duration-500 transform hover:scale-110 rounded-full cursor-pointer flex p-2 bg-indigo-500 hover:bg-indigo-600 text-white items-center hover:shadow-sm border-none ring-none outline-none"
       @click="backToTop"
     >
       <i data-feather="chevron-up"></i>
@@ -50,7 +33,7 @@ export default {
   updated() {
     feather.replace();
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener("scroll", this.updateScrollPosition);
   },
   methods: {
@@ -66,7 +49,5 @@ export default {
   },
 };
 </script>
-
-
 
 <style lang="scss" scoped></style>
