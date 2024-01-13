@@ -190,12 +190,12 @@
     </div>
   </nav>
 </template>
-<script setup></script>
-<script>
+<script setup>
 import AppNavigation from "./AppNavigation.vue";
 const localePath = useLocalePath();
 const colorMode = useColorMode();
-
+</script>
+<script>
 export default {
   components: {
     AppNavigation,
@@ -209,7 +209,7 @@ export default {
   methods: {
     themeSwitcher() {
       useColorMode().preference =
-        useColorMode().value == "light" ? "dark" : "light";
+        useColorMode().value === "light" ? "dark" : "light";
     },
     openMenu() {
       this.isOpen = !this.isOpen;
