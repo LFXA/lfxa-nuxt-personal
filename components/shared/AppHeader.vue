@@ -209,7 +209,7 @@ export default {
   methods: {
     themeSwitcher() {
       useColorMode().preference =
-        useColorMode().value === "light" ? "dark" : "light";
+        useColorMode().value == "light" ? "dark" : "light";
     },
     openMenu() {
       this.isOpen = !this.isOpen;
