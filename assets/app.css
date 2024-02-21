@@ -214,6 +214,16 @@
   font-family: "GeneralSans-BoldItalic";
 }
 
+.wrapper-expand {
+  display: inline-flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+
+.center:hover .expand-space:after {
+  content:"\00a0 ";
+}
+
 .expand {
   display: inline-flex;
   overflow: hidden;
@@ -222,7 +232,7 @@
 }
 
 .center:hover .expand {
-  letter-spacing: 0.2px;
+  letter-spacing: normal;
 }
 
 .center:hover .l-expand {
@@ -235,4 +245,6 @@
 
 .center:hover .a-expand {
   transition-delay: 1s;
+  white-space: pre;
 }
+

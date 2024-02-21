@@ -24,20 +24,21 @@ export default {
       <h1
         class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
       >
-        {{ $t("home.titleApresentation") }} L<span class="expand l-expand"
-          >ucas</span
-        >
-        <span> F<span class="expand fx-expand">eli</span>X</span> A<span
-          class="expand a-expand"
-          >quino</span
-        >
+        {{ $t("home.titleApresentation") }}
+        <div class="wrapper-expand">
+          <span class="expand-space">
+            L<span class="expand l-expand">ucas</span></span>
+          <span class="expand-space">
+            F<span class="expand fx-expand">eli</span>X</span>
+          <span>A<span class="expand a-expand">quino</span></span>
+        </div>
       </h1>
       <p
         class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400"
       >
         {{ $t("home.descriptionApresentation") }}
       </p>
-      <div class="flex justify-center sm:block">
+      <div class="flex justify-center sm:block mb-5">
         <a
           :href="$i18n.locale == 'pt-BR' ? '/LFXA-pt.pdf' : '/LFXA-en.pdf'"
           download=""
