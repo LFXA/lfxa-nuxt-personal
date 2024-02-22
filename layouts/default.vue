@@ -6,9 +6,8 @@
     <AppHeader />
 
     <!-- Render contents with transition -->
-    <transition name="fade" mode="out-in">
-      <NuxtPage />
-    </transition>
+    <NuxtPage />
+
 
     <!-- App footer -->
     <AppFooter />
@@ -48,13 +47,13 @@ export default {
   line-height: 22px;
 }
 
-.fade-enter-active {
-  animation: coming 0.4s;
+.page-enter-active {
+  animation: coming 0.9s;
   animation-delay: 0.2s;
   opacity: 0;
 }
 
-.fade-leave-active {
+.page-leave-active {
   animation: going 0.4s;
 }
 
