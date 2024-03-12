@@ -4,7 +4,7 @@ const route = useRoute();
 const localePath = useLocalePath();
 const slug = route.params.slug;
 const { locale } = useI18n();
-const { data: post, pending } = await useFetch(
+const { data: post, pending } = await useLazyFetch(
   "https://dev.to/api/articles/lfxa/" + slug,
 );
 
