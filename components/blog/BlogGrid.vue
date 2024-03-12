@@ -74,7 +74,7 @@ const tags = computed(() => {
 <template>
   <div
     v-if="filteredBlogPosts?.length"
-    class="grid grid-cols-5 container h-full md:grid-flow-col grid-flow-row gap-4 justify-items-center mx-5 md:px-0"
+    class="grid grid-cols-5 container sm:h-full lg:h-screen md:grid-flow-col grid-flow-row gap-4 justify-items-center mb-3 md:px-0"
   >
     <TransitionGroup name="post">
       <BlogPostListItem
