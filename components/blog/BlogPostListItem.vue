@@ -3,7 +3,7 @@
     :to="'blog/' + post.slug"
     :class="{
       'md:col-span-3 col-span-5': featured,
-      'lg:col-span-1 md:col-span-3 col-span-5': !featured,
+      'lg:col-span-1 md:col-span-3 row-span-1 col-span-5': !featured,
     }"
   >
     <article

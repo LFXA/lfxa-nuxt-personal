@@ -23,7 +23,13 @@ onBeforeRouteLeave(async (to, from, next) => {
 </script>
 <template>
   <div
-    v-if="post && !pending"
+    v-if="pending"
+    class="h-screen flex flex-col items-center container justify-center center text-primary-dark dark:text-primary-light"
+  >
+    <p>{{ $t("blog.withoutPost") }}</p>
+  </div>
+  <div
+    v-else-if="post && !pending"
     class="max-w-3xl px-4 sm:px-6 xl:max-w-5xl container m-auto mb-10"
   >
     <article>
@@ -67,11 +73,5 @@ onBeforeRouteLeave(async (to, from, next) => {
         </div>
       </div>
     </article>
-  </div>
-  <div
-    v-else
-    class="h-screen flex flex-col items-center container justify-center center text-primary-dark dark:text-primary-light"
-  >
-    <p>{{ $t("blog.withoutPost") }}</p>
   </div>
 </template>
