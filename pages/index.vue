@@ -1,9 +1,9 @@
 <script>
 import AppBanner from "../components/shared/AppBanner.vue";
-import Button from "../components/reusable/Button.vue";
+
 export default {
-  components: { AppBanner, Button },
-  scrollToTop: true
+  components: { AppBanner },
+  scrollToTop: true,
 };
 </script>
 <template>

@@ -26,7 +26,7 @@ export default defineNuxtConfig({
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: "page", mode: "out-in" },
   },
   css: ["@/assets/app.css", "@fortawesome/fontawesome-svg-core/styles.css"],
   modules: [
@@ -34,6 +34,8 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/i18n",
     "nuxt-icon",
+    "@nuxt/test-utils/module",
+    "@nuxt/image",
   ],
   plugins: [{ src: "@/plugins/fontawesome.js" }],
   i18n: {
@@ -44,6 +46,9 @@ export default defineNuxtConfig({
       },
       projects: {
         "pt-BR": "/projetos",
+      },
+      blog: {
+        "pt-BR": "/blog",
       },
     },
     locales: [

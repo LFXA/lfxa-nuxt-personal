@@ -20,17 +20,33 @@
       >Projects</NuxtLink
     > -->
     <NuxtLink
-      :to="localePath('about', $i18n.locale)"
+      v-for="menu in menus"
+      :key="menu.name"
+      :to="localePath(menu.name, $i18n.locale)"
       class="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-cyan-700 dark:hover:text-cyan-700 sm:mx-4 mb-2 sm:py-2 border-primary-light dark:border-secondary-dark"
-      :class="{ 'nuxt-link-active': isRouteActive($t('menu.about')) }"
-      :aria-label="$t('menu.about')"
-      >{{ $t("menu.about") }}</NuxtLink
+      :class="{
+        'nuxt-link-active': isRouteActive(
+          menu.i18n ? $t('menu.' + menu.name) : menu.name,
+        ),
+      }"
+      :aria-label="menu.i18n ? $t('menu.' + menu.name) : menu.name"
+      >{{
+        menu.i18n ? $t("menu." + menu.name) : capitalizeFirstLetter(menu.name)
+      }}</NuxtLink
     >
   </div>
 </template>
 <script>
 export default {
   props: ["isOpen"],
+  data() {
+    return {
+      menus: [
+        { name: "about", i18n: true },
+        { name: "blog", i18n: false },
+      ],
+    };
+  },
   methods: {
     isRouteActive(id) {
       if (this.$route.path.includes(id.toLowerCase())) {
@@ -38,6 +54,9 @@ export default {
       } else {
         return false;
       }
+    },
+    capitalizeFirstLetter(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
     },
   },
 };

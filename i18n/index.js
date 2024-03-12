@@ -13,6 +13,9 @@ export const messages = {
     about: aboutPageENUS,
     home: homePageENUS,
     blog: blogPageENUS,
+    paginationNext: "Next",
+    paginationPrev: "Previous",
+    paginationOf: "of",
   },
 
   "pt-BR": {
@@ -23,5 +26,8 @@ export const messages = {
     about: aboutPagePTBR,
     home: homePagePTBR,
     blog: blogPagePTBR,
+    paginationNext: "Próximo",
+    paginationPrev: "Anterior",
+    paginationOf: "de",
   },
 };

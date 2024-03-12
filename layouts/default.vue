@@ -8,7 +8,6 @@
     <!-- Render contents with transition -->
     <NuxtPage />
 
-
     <!-- App footer -->
     <AppFooter />
 
@@ -20,18 +19,16 @@
     </div>
   </div>
 </template>
-
 <script>
 import feather from "feather-icons";
 import AppHeader from "../components/shared/AppHeader.vue";
 import AppFooter from "../components/shared/AppFooter.vue";
 import BackToTop from "../components/BackToTop.vue";
+
 export default {
   components: { AppFooter, BackToTop, AppHeader },
   data: () => {
-    return {
-      // Todo
-    };
+    return {};
   },
   mounted() {
     feather.replace();

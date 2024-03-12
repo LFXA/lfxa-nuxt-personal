@@ -1,11 +1,13 @@
 export const blogPagePTBR = {
-  category: "Categoria",
-  categories: "Categorias",
-  postedIn: "Postado em",
+  withoutPosts: "Parece que ainda não há nenhuma postagem no blog.",
+  withoutPost: "Esse post existe?",
+  backToTheBlog: "Volte ao blog",
+  minRead: "minutos de leitura",
 };
 
 export const blogPageENUS = {
-  category: "Category",
-  categories: "Categories",
-  postedIn: "Posted in",
+  withoutPosts: "Seems like there are no blog post yet.",
+  withoutPost: "Does this post exist?",
+  backToTheBlog: "Back to the blog",
+  minRead: "min read",
 };

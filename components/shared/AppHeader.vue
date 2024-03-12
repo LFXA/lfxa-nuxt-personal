@@ -1,7 +1,7 @@
 <template>
-  <nav id="nav" class="sticky top-0 bg-slate-200 dark:bg-secondary-dark">
+  <nav id="nav" class="sticky z-10 top-0 bg-slate-200 dark:bg-secondary-dark">
     <!-- Header -->
-    <div class="z-10 block sm:flex sm:justify-between sm:items-center px-8">
+    <div class="z-10 sticky sm:flex sm:justify-between sm:items-center px-8">
       <!-- Header menu links and small screen hamburger menu -->
       <div class="flex justify-between items-center px-6 sm:px-0">
         <!-- Header logos -->
