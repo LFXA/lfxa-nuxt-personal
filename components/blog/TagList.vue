@@ -9,7 +9,7 @@ defineProps({
 </script>
 <template>
   <div
-    class="flex flex-col text-ternary-dark dark:text-ternary-light lg:mt-0 lg:ml-7"
+    class="flex flex-col text-ternary-dark dark:text-ternary-light lg:mt-0 my-5 lg:ml-7"
   >
     <h3 class="text-2xl my-6">Tags</h3>
     <div class="flex flex-wrap">
