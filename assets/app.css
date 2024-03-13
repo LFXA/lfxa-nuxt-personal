@@ -361,6 +361,38 @@
     margin: calc(var(--content-rhythm) * 2) auto;
   }
 
+  ul,
+  ol {
+    padding-left: var(--su-6);
+    margin: 0 0 var(--content-rhythm) 0
+  }
+
+  ul br,
+  ol br {
+    line-height: 0;
+    margin: 0;
+    padding: 0
+  }
+
+  ul {
+    list-style-type: disc
+  }
+
+  ul p {
+    margin: 0;
+    padding: 0
+  }
+
+  ul ul {
+    margin: 0 0 0 var(--content-rhythm);
+    list-style-type: square
+  }
+
+  ul ul ul {
+    list-style-type: circle
+  }
+
+
   ol>li>p {
     margin: 0 0 var(--content-rhythm) 0;
   }
@@ -854,16 +886,6 @@
 
   .ltag__link__link:active {
     opacity: 0.7
-  }
-
-  .ltag__link {
-    font-family: var(--ff-sans-serif);
-    border: 1px solid var(--form-border);
-    box-shadow: var(--shadow-smooth);
-    border-radius: var(--radius-auto);
-    display: block;
-    margin: 0.95em 0 1.2em;
-    max-width: 100%
   }
 
   .ltag__link .video-image {
