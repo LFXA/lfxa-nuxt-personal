@@ -19,7 +19,7 @@ onBeforeRouteLeave(async (to, from, next) => {
 
 const { data: post, pending } = await useFetch(
   "https://dev.to/api/articles/lfxa/" + slug,
-  { lazy: true },
+  { lazy: true, server: false },
 );
 </script>
 <template>
