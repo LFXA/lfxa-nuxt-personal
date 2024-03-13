@@ -23,7 +23,7 @@ onBeforeRouteLeave(async (to, from, next) => {
 </script>
 <template>
   <div
-    v-if="pending"
+    v-if="!post || pending"
     class="h-screen flex flex-col items-center container justify-center center text-primary-dark dark:text-primary-light"
   >
     <p>{{ $t("blog.withoutPost") }}</p>
