@@ -1,12 +1,8 @@
-<script setup>
+<script setup lang="ts">
 const route = useRoute();
 const localePath = useLocalePath();
 const slug = route.params.slug;
 const { locale } = useI18n();
-const { data: post, pending } = await useFetch(
-  "https://dev.to/api/articles/lfxa/" + slug,
-  { lazy: true },
-);
 
 onBeforeRouteLeave(async (to, from, next) => {
   if (
@@ -20,6 +16,11 @@ onBeforeRouteLeave(async (to, from, next) => {
   }
   next();
 });
+
+const { data: post, pending } = await useFetch(
+  "https://dev.to/api/articles/lfxa/" + slug,
+  { lazy: true },
+);
 </script>
 <template>
   <div
