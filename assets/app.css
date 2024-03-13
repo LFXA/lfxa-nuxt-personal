@@ -332,7 +332,8 @@
   --form-border-hover: rgb(var(--grey-400));
   --form-border-focus: var(--focus);
   --card-bg: rgb(var(--white));
-  --shadow-smooth: 0px 8px 16px rgba(0, 0, 0, 0.06);
+  --shadow-smooth: 0px 8px 16px rgba(0, 0, 0, 0.07);
+  --shadow-smooth-white: 0px 8px 16px rgba(255, 255, 255, 0.21);
   --z-elevate: 1;
   --button-secondary-bg: var(--base-20);
   --button-secondary-bg-hover: var(--base-30);
@@ -340,6 +341,13 @@
   --button-secondary-color-hover: var(--base-100);
 }
 
+html.dark .ltag__link {
+  box-shadow: var(--shadow-smooth-white);
+}
+
+html.dark .ltag-github-readme-tag {
+  box-shadow: var(--shadow-smooth-white);
+}
 
 
 .blog-post> {
@@ -991,6 +999,10 @@
 
   body.default-header .crayons-article .crayons-article__body [id] {
     scroll-margin-top: var(--header-height)
+  }
+
+  .ltag-github-readme-tag> :not(.readme-overview) {
+    display: none;
   }
 
   .ltag-github-body {
