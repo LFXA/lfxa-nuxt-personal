@@ -44,10 +44,10 @@ const { data: post, pending } = await useFetch(
           <div
             class="absolute inset-0 flex flex-col items-center justify-center backdrop-contrast-50 bg-black/30 text-center text-primary-light rounded-md font-bold"
           >
-            <h1 class="lg:text-5xl text-2xl mt-6">
+            <h1 class="lg:text-5xl md:text-2xl text-md mt-6">
               {{ post.title }}
             </h1>
-            <p class="my-7 text-md">
+            <p class="my-7 md:text-md text-sm">
               {{ formatDate(post.published_at, $i18n.locale) }} -
               {{ post.reading_time_minutes }} {{ $t("blog.minRead") }}
             </p>

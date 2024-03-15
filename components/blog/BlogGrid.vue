@@ -18,7 +18,7 @@ const props = defineProps({
     type: Array,
   },
   postPerPage: {
-    default: 4,
+    default: 5,
     type: Number,
   },
 });
@@ -74,7 +74,7 @@ const tags = computed(() => {
 <template>
   <div
     v-if="filteredBlogPosts?.length"
-    class="grid grid-cols-5 container sm:h-full lg:h-screen md:grid-flow-col grid-flow-row gap-4 justify-items-center mb-3 md:px-0"
+    class="grid grid-cols-6 container lg:h-full xl:h-screen md:grid-flow-col grid-flow-row justify-items-center mb-3 p-6 md:px-0"
   >
     <TransitionGroup name="post">
       <BlogPostListItem
@@ -84,7 +84,10 @@ const tags = computed(() => {
         :post="post"
       />
     </TransitionGroup>
-    <BlogTagList class="md:row-span-2 row-span-1 col-span-5" :tags="tags" />
+    <BlogTagList
+      class="md:row-span-2 row-span-1 col-span-6 md:col-span-2"
+      :tags="tags"
+    />
     <SharedPagination
       v-show="totalPages > 1"
       :current-page="currentPage"

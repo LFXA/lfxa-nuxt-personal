@@ -9,7 +9,7 @@ defineProps({
 </script>
 <template>
   <div
-    class="flex flex-col text-ternary-dark dark:text-ternary-light lg:mt-0 my-5 lg:ml-7"
+    class="flex flex-col text-ternary-dark dark:text-ternary-light lg:mt-0 my-5 md:ml-7"
   >
     <h3 class="text-2xl my-6">Tags</h3>
     <div class="flex flex-wrap">
@@ -19,6 +19,7 @@ defineProps({
           :to="
             route.fullPath.includes(tag.name) ? 'blog' : 'blog?tag=' + tag.name
           "
+          @click="backToTop()"
           ><div
             class="mb-3 mr-2 p-2 flex-1 text-md font-semibold w-fit h-fit text-center box-border hover:bg-slate-400 hover:dark:bg-cyan-700 shadow-lg rounded-3xl"
             :class="{
@@ -38,4 +39,17 @@ defineProps({
     </div>
   </div>
 </template>
+<script>
+export default {
+
+  methods: {
+    backToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
+  },
+};
+</script>
 <style scoped></style>

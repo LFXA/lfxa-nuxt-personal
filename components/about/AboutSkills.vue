@@ -27,7 +27,7 @@ export default {
           {{ $t(aboutTools.title) }}
         </p>
         <div
-          class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-4 justify-items-start mt-5"
+          class="grid md:grid-cols-2 grid-cols-1 xl:grid-cols-3 gap-x-6 gap-y-4 justify-items-start mt-5"
         >
           <div
             v-for="tool in aboutTools.tools"

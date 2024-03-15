@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col sm:justify-between items-center dark:bg-ternary-dark px-10 md:py-10"
+    class="flex flex-col sm:justify-between items-center dark:bg-ternary-dark md:px-10 md:py-10"
   >
     <BlogGridSkeleton v-if="pending" />
     <BlogGrid v-else :posts="posts" />
