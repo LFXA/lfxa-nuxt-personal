@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-6 container h-screen md:grid-flow-col grid-flow-row gap-4 justify-items-center my-10 mx-10 md:px-0"
+    class="grid grid-cols-6 container md:grid-flow-col grid-flow-row gap-4 justify-items-center my-10 mx-10 md:px-0"
   >
     <a class="md:col-span-4 col-span-5">
       <article class="flex flex-col gap-4 p-3 mb-6 lg:flex-row md:gap-8">
