@@ -24,7 +24,8 @@
       acceptCookies() {
         Cookies.set('user_consent', 'true', { expires: 365 });
         this.consentGiven = true;
-        const { gtag } = useGtag()
+        const { gtag, initialize } = useGtag()
+        initialize();
         gtag('consent', 'update',
            {
                 ad_user_data: 'granted',
