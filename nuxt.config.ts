@@ -41,8 +41,13 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/test-utils/module",
     "@nuxt/image",
+    "nuxt-gtag",
   ],
-
+  
+  gtag: {
+    initMode: 'manual',
+    id: process.env.GOOGLE_ANALYTICS
+  },
   plugins: [{ src: "@/plugins/fontawesome.js" }],
 
   i18n: {
