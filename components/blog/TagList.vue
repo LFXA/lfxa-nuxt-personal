@@ -41,7 +41,6 @@ defineProps({
 </template>
 <script>
 export default {
-
   methods: {
     backToTop() {
       window.scrollTo({

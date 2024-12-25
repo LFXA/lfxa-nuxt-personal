@@ -7,11 +7,14 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
   ssr: true,
+
   colorMode: {
     classSuffix: "",
     preference: "dark",
   },
+
   app: {
     head: {
       title: "LFXA personal.",
@@ -28,7 +31,9 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: "page", mode: "out-in" },
   },
+
   css: ["@/assets/app.css", "@fortawesome/fontawesome-svg-core/styles.css"],
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
@@ -37,7 +42,9 @@ export default defineNuxtConfig({
     "@nuxt/test-utils/module",
     "@nuxt/image",
   ],
+
   plugins: [{ src: "@/plugins/fontawesome.js" }],
+
   i18n: {
     customRoutes: "config", // disable custom route with page components
     pages: {
@@ -63,4 +70,6 @@ export default defineNuxtConfig({
     ],
     vueI18n: "./i18n.config.ts",
   },
+
+  compatibilityDate: "2024-12-24",
 });

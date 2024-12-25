@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex flex-col sm:justify-between h-full max-h-full items-center dark:bg-ternary-dark md:px-10 md:py-10"
-  >
+  <div class="flex flex-col sm:justify-between items-center">
     <BlogGridSkeleton v-if="pending" />
     <BlogGrid v-else :posts="posts" />
   </div>

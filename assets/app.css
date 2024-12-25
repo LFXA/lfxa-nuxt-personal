@@ -287,7 +287,8 @@
   --radius: 0.375rem;
   --radius-large: 0.75rem;
   --radius-xl: 2rem;
-  --radius-auto: Max(0px, Min(var(--radius), calc((100vw - 4px - 100%) * 9999))) / var(--radius);
+  --radius-auto: Max(0px, Min(var(--radius), calc((100vw - 4px - 100%) * 9999))) /
+    var(--radius);
   --radius-xl: 2rem;
   --fs-base: 1rem;
   --fs-l: 1.125rem;
@@ -349,9 +350,8 @@ html.dark .ltag-github-readme-tag {
   box-shadow: var(--shadow-smooth-white);
 }
 
-
-.blog-post> {
-  blockquote>p>a {
+.blog-post > {
+  blockquote > p > a {
     text-decoration: underline;
     color: var(--link-branded-color);
   }
@@ -372,36 +372,35 @@ html.dark .ltag-github-readme-tag {
   ul,
   ol {
     padding-left: var(--su-6);
-    margin: 0 0 var(--content-rhythm) 0
+    margin: 0 0 var(--content-rhythm) 0;
   }
 
   ul br,
   ol br {
     line-height: 0;
     margin: 0;
-    padding: 0
+    padding: 0;
   }
 
   ul {
-    list-style-type: disc
+    list-style-type: disc;
   }
 
   ul p {
     margin: 0;
-    padding: 0
+    padding: 0;
   }
 
   ul ul {
     margin: 0 0 0 var(--content-rhythm);
-    list-style-type: square
+    list-style-type: square;
   }
 
   ul ul ul {
-    list-style-type: circle
+    list-style-type: circle;
   }
 
-
-  ol>li>p {
+  ol > li > p {
     margin: 0 0 var(--content-rhythm) 0;
   }
 
@@ -410,7 +409,7 @@ html.dark .ltag-github-readme-tag {
     padding-left: 1em;
   }
 
-  ol>li>p>strong>a {
+  ol > li > p > strong > a {
     text-decoration: underline;
     color: var(--link-branded-color);
   }
@@ -431,7 +430,7 @@ html.dark .ltag-github-readme-tag {
 
   pre:not(.highlight),
   div.highlight,
-  div:not(.highlight)>pre.highlight,
+  div:not(.highlight) > pre.highlight,
   li pre.highlight,
   blockquote pre.highlight {
     background: var(--syntax-background-color);
@@ -451,7 +450,7 @@ html.dark .ltag-github-readme-tag {
 
   pre:not(.highlight) code,
   div.highlight code,
-  div:not(.highlight)>pre.highlight code,
+  div:not(.highlight) > pre.highlight code,
   li pre.highlight code,
   blockquote pre.highlight code {
     font-size: 100%;
@@ -488,7 +487,7 @@ html.dark .ltag-github-readme-tag {
           opacity: 1;
         }
 
-        &+& {
+        & + & {
           margin-left: 1px;
           border-bottom-left-radius: 0;
         }
@@ -548,7 +547,7 @@ html.dark .ltag-github-readme-tag {
     padding: 0.1em 0.25em;
   }
 
-  p>code {
+  p > code {
     background: var(--code-inline-bg);
   }
 
@@ -700,16 +699,15 @@ html.dark .ltag-github-readme-tag {
     border-color: var(--border-hover);
     box-shadow: var(--shadow-hover);
     color: var(--color-hover);
-    z-index: var(--z-elevate)
+    z-index: var(--z-elevate);
   }
 
-
   .ltag__link__link {
-    color: var(--body-color) !important
+    color: var(--body-color) !important;
   }
 
   .ltag__link__link:active {
-    opacity: 0.7
+    opacity: 0.7;
   }
 
   .ltag__link {
@@ -719,7 +717,7 @@ html.dark .ltag-github-readme-tag {
     border-radius: var(--radius-auto);
     display: block;
     margin: 0.95em 0 1.2em;
-    max-width: 100%
+    max-width: 100%;
   }
 
   .ltag-github-readme-tag {
@@ -728,24 +726,25 @@ html.dark .ltag-github-readme-tag {
     box-shadow: var(--shadow-smooth);
     border-radius: var(--radius-auto);
     margin: 1.1em auto 1.3em;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
-    overflow: hidden
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    overflow: hidden;
   }
 
   .ltag-github-readme-tag a {
-    color: var(--link-branded-color) !important
+    color: var(--link-branded-color) !important;
   }
 
   .ltag-github-readme-tag .readme-overview {
     padding: 0.8em calc(0.5em + 0.25vw);
-    border-bottom: 1px solid #dbdbdb
+    border-bottom: 1px solid #dbdbdb;
   }
 
   .ltag-github-readme-tag .readme-overview h2 {
     font-weight: 400 !important;
     font-size: 1.2em !important;
     line-height: 1.3em !important;
-    margin: 0em 0px 0.5em !important
+    margin: 0em 0px 0.5em !important;
   }
 
   .ltag-github-readme-tag .readme-overview h2 img {
@@ -756,7 +755,7 @@ html.dark .ltag-github-readme-tag {
     margin: 0;
     vertical-align: -0.18em;
     filter: invert(0);
-    filter: var(--theme-social-icon-invert, invert(0))
+    filter: var(--theme-social-icon-invert, invert(0));
   }
 
   .ltag-github-readme-tag .readme-overview h3 {
@@ -764,37 +763,37 @@ html.dark .ltag-github-readme-tag {
     margin: 0;
     margin-left: 0.15em;
     font-size: 0.75em !important;
-    line-height: 1.05em !important
+    line-height: 1.05em !important;
   }
 
   .ltag-github-readme-tag .ltag-github-body {
     font-size: 0.72em;
     line-height: 1.12em;
     text-align: left;
-    min-height: 100px
+    min-height: 100px;
   }
 
   .ltag-github-readme-tag .gh-btn-container {
-    padding: 0.1em 0 1.15em
+    padding: 0.1em 0 1.15em;
   }
 
   .ltag-github-readme-tag .gh-btn {
     padding: 0.28em 1.2em;
-    font-size: 0.75em
+    font-size: 0.75em;
   }
 
   .ltag-github-readme-tag .markdown-body {
-    padding: 0em calc(0.5em + 0.2vw)
+    padding: 0em calc(0.5em + 0.2vw);
   }
 
   .ltag-github-readme-tag .markdown-body table {
     max-width: 80%;
-    margin-left: 10%
+    margin-left: 10%;
   }
 
   .ltag-github-readme-tag .markdown-body img {
     display: inline-block;
-    left: 0px
+    left: 0px;
   }
 
   .ltag-github-readme-tag .markdown-body .highlight {
@@ -804,11 +803,11 @@ html.dark .ltag-github-readme-tag {
 
   .ltag-github-readme-tag .markdown-body pre {
     max-width: 100%;
-    margin-left: 10%
+    margin-left: 10%;
   }
 
   .ltag-github-readme-tag .markdown-body .anchor {
-    display: none
+    display: none;
   }
 
   .gh-btn-container {
@@ -816,7 +815,7 @@ html.dark .ltag-github-readme-tag {
     padding: 0.35em 0 1.35em;
     box-shadow: 0 0 60px 42px var(--card-bg);
     position: relative;
-    z-index: var(--z-elevate)
+    z-index: var(--z-elevate);
   }
 
   .ltag__link .ltag__link__user__pic img {
@@ -824,7 +823,7 @@ html.dark .ltag-github-readme-tag {
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    margin: 0
+    margin: 0;
   }
 
   .ltag__link .ltag__link__content {
@@ -832,7 +831,7 @@ html.dark .ltag-github-readme-tag {
     vertical-align: top;
     padding: calc(0.7vw + 6px);
     padding-left: 0;
-    width: calc(100% - 2.5vw - 70px)
+    width: calc(100% - 2.5vw - 70px);
   }
 
   .ltag__link .ltag__link__content h2 {
@@ -840,7 +839,7 @@ html.dark .ltag-github-readme-tag {
     padding: 0;
     font-weight: var(--fw-bold);
     font-size: calc(1.45em + 0.2vw);
-    line-height: var(--lh-tight)
+    line-height: var(--lh-tight);
   }
 
   .ltag__link .ltag__link__content h3 {
@@ -849,15 +848,15 @@ html.dark .ltag-github-readme-tag {
     font-size: var(--fs-s);
     font-weight: var(--fw-medium);
     color: var(--color);
-    color: var(--card-color-tertiary)
+    color: var(--card-color-tertiary);
   }
 
   .ltag__link .ltag__link__content h3 a {
-    color: var(--card-color-tertiary)
+    color: var(--card-color-tertiary);
   }
 
   .ltag__link .ltag__link__content .missing {
-    padding: 0 10px !important
+    padding: 0 10px !important;
   }
 
   .ltag__link .ltag__link__content .ltag__link__taglist {
@@ -866,18 +865,18 @@ html.dark .ltag-github-readme-tag {
     line-height: 1;
     font-size: 0.88em;
     margin-bottom: 5px;
-    color: var(--tag-color)
+    color: var(--tag-color);
   }
 
   .ltag__link .ltag__link__content .ltag__link__tag {
     margin-right: calc(0.02vw + 4px);
     font-size: 0.9em;
-    margin-left: 1px
+    margin-left: 1px;
   }
 
   .ltag__link .ltag__link__content .ltag__link__servicename {
     color: var(--card-color-tertiary);
-    font-size: 0.7em
+    font-size: 0.7em;
   }
 
   .ltag__link .ltag__link__content .ltag__link__servicename img {
@@ -885,15 +884,15 @@ html.dark .ltag-github-readme-tag {
     height: 1.5em;
     width: 1.5em;
     display: inline-block;
-    margin-left: 2px
+    margin-left: 2px;
   }
 
   .ltag__link__link {
-    color: var(--body-color) !important
+    color: var(--body-color) !important;
   }
 
   .ltag__link__link:active {
-    opacity: 0.7
+    opacity: 0.7;
   }
 
   .ltag__link .video-image {
@@ -906,7 +905,7 @@ html.dark .ltag-github-readme-tag {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    display: block
+    display: block;
   }
 
   .ltag__link .video-timestamp {
@@ -920,7 +919,7 @@ html.dark .ltag-github-readme-tag {
     font-weight: 500;
     border-radius: 3px;
     display: block;
-    line-height: 20px
+    line-height: 20px;
   }
 
   .ltag__link .video-timestamp img {
@@ -928,7 +927,7 @@ html.dark .ltag-github-readme-tag {
     width: 14px;
     display: inline-block;
     vertical-align: -2px;
-    padding-left: 5px
+    padding-left: 5px;
   }
 
   .ltag__link .ltag__link__pic {
@@ -936,7 +935,7 @@ html.dark .ltag-github-readme-tag {
     padding: calc(0.6vw + 8px) calc(0.8vw + 8px);
     padding-right: 8px;
     box-sizing: border-box;
-    border-radius: var(--radius)
+    border-radius: var(--radius);
   }
 
   .ltag__link .ltag__link__pic img {
@@ -946,7 +945,7 @@ html.dark .ltag-github-readme-tag {
     border-radius: 150px;
     box-sizing: border-box;
     max-width: 60px;
-    max-height: 60px
+    max-height: 60px;
   }
 
   .ltag__link .ltag__link__org__pic {
@@ -955,11 +954,11 @@ html.dark .ltag-github-readme-tag {
     display: inline-block;
     padding: calc(0.4vw + 8px) calc(0.8vw + 8px);
     padding-right: 10px;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
   .ltag__link .ltag__link__org__pic::after {
-    content: '';
+    content: "";
     opacity: 0.15;
     width: 100%;
     height: 100%;
@@ -968,10 +967,10 @@ html.dark .ltag-github-readme-tag {
     top: 0;
     border-radius: var(--radius);
     pointer-events: none;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
-  .ltag__link .ltag__link__org__pic>img {
+  .ltag__link .ltag__link__org__pic > img {
     display: inline-block;
     width: calc(2.2vw + 45px);
     height: calc(2.5vw + 40px);
@@ -979,7 +978,7 @@ html.dark .ltag-github-readme-tag {
     border-radius: var(--radius);
     box-sizing: border-box;
     max-width: 55px;
-    max-height: 55px
+    max-height: 55px;
   }
 
   .ltag__link .ltag__link__user__pic {
@@ -994,33 +993,34 @@ html.dark .ltag-github-readme-tag {
     width: calc(2vw + 28px);
     height: calc(2vw + 28px);
     max-width: 38px;
-    max-height: 38px
+    max-height: 38px;
   }
 
   body.default-header .crayons-article .crayons-article__body [id] {
-    scroll-margin-top: var(--header-height)
+    scroll-margin-top: var(--header-height);
   }
 
-  .ltag-github-readme-tag> :not(.readme-overview) {
+  .ltag-github-readme-tag > :not(.readme-overview) {
     display: none;
   }
 
   .ltag-github-body {
     padding: 1em 1.5em;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     max-height: calc(21vw + 165px);
-    overflow: hidden
+    overflow: hidden;
   }
 
   @media screen and (min-width: 430px) {
     .ltag-github-body {
-      max-height: calc(20vw + 153px)
+      max-height: calc(20vw + 153px);
     }
   }
 
   @media screen and (min-width: 800px) {
     .ltag-github-body {
-      max-height: 310px
+      max-height: 310px;
     }
   }
 
@@ -1030,7 +1030,7 @@ html.dark .ltag-github-readme-tag {
   .ltag-github-body h4,
   .ltag-github-body h5,
   .ltag-github-body h6 {
-    font-weight: 500 !important
+    font-weight: 500 !important;
   }
 
   .ltag-github-body h1 {
@@ -1039,7 +1039,7 @@ html.dark .ltag-github-readme-tag {
     padding-bottom: 0.3em;
     border-bottom: 1px solid #eaecef;
     margin-top: 1em !important;
-    margin-bottom: 0.9em !important
+    margin-bottom: 0.9em !important;
   }
 
   .ltag-github-body h3 {
@@ -1048,30 +1048,30 @@ html.dark .ltag-github-readme-tag {
     padding: 0;
     font-size: 1.2em;
     font-weight: 600;
-    line-height: 1.25
+    line-height: 1.25;
   }
 
   .ltag-github-body h4 {
-    padding: 0
+    padding: 0;
   }
 
   .ltag-github-body *:first-child {
-    margin-top: 0 !important
+    margin-top: 0 !important;
   }
 
   .ltag-github-body *:last-child {
-    margin-bottom: 0 !important
+    margin-bottom: 0 !important;
   }
 
   .ltag-github-body img {
-    left: inherit
+    left: inherit;
   }
 
   .ltag-github-body blockquote {
     color: #6a737d;
     padding: 0px 1em;
     border-left: 0.25em solid #dfe2e5;
-    margin: 16px 0px
+    margin: 16px 0px;
   }
 
   .ltag-github-body kbd {
@@ -1086,31 +1086,32 @@ html.dark .ltag-github-readme-tag {
     border: solid 1px #c6cbd1;
     border-bottom-color: #959da5;
     border-radius: 3px;
-    box-shadow: inset 0 -1px 0 #959da5
+    box-shadow: inset 0 -1px 0 #959da5;
   }
 
   .ltag-github-body p {
     margin-top: 0px;
     padding: 0px;
-    margin-bottom: 15px
+    margin-bottom: 15px;
   }
 
   .ltag-github-body p a.github-user-link {
     color: var(--card-color-secondary);
     font-weight: 600;
-    white-space: nowrap
+    white-space: nowrap;
   }
 
   .ltag-github-body p a.github-user-link:hover {
     color: #24292e;
-    text-decoration: underline
+    text-decoration: underline;
   }
 
   .ltag-github-body code {
     border-radius: 3px;
     padding: 0.2em 5px 0px;
     margin: 0px;
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+      monospace;
   }
 
   .ltag-github-body pre {
@@ -1118,14 +1119,14 @@ html.dark .ltag-github-readme-tag {
     margin: 0px;
     color: black;
     background-color: #f6f8fa;
-    padding: 0
+    padding: 0;
   }
 
   .ltag-github-body pre code {
     background-color: #f6f8fa;
     color: black;
     padding: 0em 0px 0px !important;
-    line-height: 2em !important
+    line-height: 2em !important;
   }
 
   .ltag-github-body .highlight pre,
@@ -1140,45 +1141,45 @@ html.dark .ltag-github-readme-tag {
     box-sizing: border-box !important;
     color: black !important;
     border-radius: 3px !important;
-    margin: 0.95em 0 1.2em !important
+    margin: 0.95em 0 1.2em !important;
   }
 
   .ltag-github-body .highlight {
     font-size: 14px !important;
     margin-bottom: 16px !important;
-    border-radius: 3px !important
+    border-radius: 3px !important;
   }
 
   .ltag-github-body b,
   .ltag-github-body strong {
-    font-weight: 600
+    font-weight: 600;
   }
 
   .ltag-github-body .pl-c {
-    color: #969896
+    color: #969896;
   }
 
   .ltag-github-body .pl-c1,
   .ltag-github-body .pl-s .pl-v {
-    color: #0086b3
+    color: #0086b3;
   }
 
   .ltag-github-body .pl-e,
   .ltag-github-body .pl-en {
-    color: #795da3
+    color: #795da3;
   }
 
   .ltag-github-body .pl-s .pl-s1,
   .ltag-github-body .pl-smi {
-    color: #333
+    color: #333;
   }
 
   .ltag-github-body .pl-ent {
-    color: #63a35c
+    color: #63a35c;
   }
 
   .ltag-github-body .pl-k {
-    color: #a71d5d
+    color: #a71d5d;
   }
 
   .ltag-github-body .pl-pds,
@@ -1188,69 +1189,69 @@ html.dark .ltag-github-readme-tag {
   .ltag-github-body .pl-sr .pl-cce,
   .ltag-github-body .pl-sr .pl-sra,
   .ltag-github-body .pl-sr .pl-sre {
-    color: #183691
+    color: #183691;
   }
 
   .ltag-github-body .pl-v {
-    color: #ed6a43
+    color: #ed6a43;
   }
 
   .ltag-github-body .pl-id {
-    color: #b52a1d
+    color: #b52a1d;
   }
 
   .ltag-github-body .pl-ii {
     background-color: #b52a1d;
-    color: #f8f8f8
+    color: #f8f8f8;
   }
 
   .ltag-github-body .pl-sr .pl-cce {
     color: #63a35c;
-    font-weight: bold
+    font-weight: bold;
   }
 
   .ltag-github-body .pl-ml {
-    color: #693a17
+    color: #693a17;
   }
 
   .ltag-github-body .pl-mh,
   .ltag-github-body .pl-mh .pl-en,
   .ltag-github-body .pl-ms {
     color: #1d3e81;
-    font-weight: bold
+    font-weight: bold;
   }
 
   .ltag-github-body .pl-mq {
-    color: #008080
+    color: #008080;
   }
 
   .ltag-github-body .pl-mi {
     color: #333;
-    font-style: italic
+    font-style: italic;
   }
 
   .ltag-github-body .pl-mb {
     color: #333;
-    font-weight: bold
+    font-weight: bold;
   }
 
   .ltag-github-body .pl-md {
     background-color: #ffecec;
-    color: #bd2c00
+    color: #bd2c00;
   }
 
   .ltag-github-body .pl-mi1 {
     background-color: #eaffea;
-    color: #55a532
+    color: #55a532;
   }
 
   .ltag-github-body .pl-mdr {
     color: #795da3;
-    font-weight: bold
+    font-weight: bold;
   }
 
   .ltag-github-body .pl-mo {
-    color: #1d3e81
+    color: #1d3e81;
   }
 
   .crayons-btn--secondary,
@@ -1261,31 +1262,31 @@ html.dark .ltag-github-readme-tag {
     --bg: var(--button-secondary-bg);
     --bg-hover: var(--button-secondary-bg-hover);
     --color: var(--button-secondary-color);
-    --color-hover: var(--button-secondary-color-hover)
+    --color-hover: var(--button-secondary-color-hover);
   }
 
-  p>a {
+  p > a {
     text-decoration: underline;
-    color: var(--link-branded-color)
+    color: var(--link-branded-color);
   }
 
-  p>a:hover {
+  p > a:hover {
     color: var(--link-branded-color-hover);
   }
 
-  p>[class*='ltag'] a {
-    text-decoration: none
+  p > [class*="ltag"] a {
+    text-decoration: none;
   }
 
-  p>[class*='ltag'] a:hover {
-    color: var(--color-hover)
+  p > [class*="ltag"] a:hover {
+    color: var(--color-hover);
   }
 
-  p>a[class*='ltag'] {
-    text-decoration: none
+  p > a[class*="ltag"] {
+    text-decoration: none;
   }
 
-  p>a[class*='ltag']:hover {
-    color: var(--color-hover)
+  p > a[class*="ltag"]:hover {
+    color: var(--color-hover);
   }
 }

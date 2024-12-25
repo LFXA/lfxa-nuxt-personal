@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-slate-100 mx-auto dark:bg-primary-dark min-h-screen flex flex-col"
+    class="bg-slate-100 mx-auto dark:bg-primary-dark justify-between min-h-screen flex flex-col"
   >
     <!-- App header -->
     <AppHeader />

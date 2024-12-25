@@ -4,7 +4,7 @@
     class="mr-4"
     :class="{
       'md:col-span-4 col-span-6': featured,
-      'md:col-span-2 lg:col-span-1 row-span-1 col-span-6': !featured,
+      'md:col-span-2 xl:col-span-1 row-span-1 col-span-6': !featured,
     }"
   >
     <article
