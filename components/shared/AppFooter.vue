@@ -1,6 +1,6 @@
 <script>
-import { mapState } from 'pinia'
-import { useFooterStore } from '../store/footer'
+import { mapState } from "pinia";
+import { useFooterStore } from "../store/footer";
 import FooterCopyright from "./FooterCopyright.vue";
 export default {
   components: { FooterCopyright },

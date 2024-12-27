@@ -20,7 +20,7 @@ const state = () => ({
       bio: "about.text4",
     },
   ],
-  aboutMeTools
+  aboutMeTools,
 });
 
 const getters = {
@@ -35,7 +35,7 @@ const actions = {
   // @todo
 };
 
-export const useAboutStore = defineStore('about', {
+export const useAboutStore = defineStore("about", {
   state,
   mutations,
   actions,

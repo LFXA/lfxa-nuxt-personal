@@ -48,7 +48,7 @@ const actions = {
   // @todo
 };
 
-export const useFooterStore = defineStore('footer', {
+export const useFooterStore = defineStore("footer", {
   state,
   mutations,
   actions,

@@ -24,9 +24,8 @@ onBeforeRouteLeave(async (to, from, next) => {
   next();
 });
 
-
 onMounted(async () => {
-    post.value = await store.fetchPostBySlug(slug);
+  post.value = await store.fetchPostBySlug(slug);
 });
 </script>
 <template>

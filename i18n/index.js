@@ -16,9 +16,10 @@ export const messages = {
     paginationNext: "Next",
     paginationPrev: "Previous",
     paginationOf: "of",
-    consentCookiesMessage: "This website uses cookies to improve your experience. By using this site, you agree to our use of cookies.",
+    consentCookiesMessage:
+      "This website uses cookies to improve your experience. By using this site, you agree to our use of cookies.",
     Accept: "Accept",
-    Decline: "Decline"
+    Decline: "Decline",
   },
 
   "pt-BR": {
@@ -32,8 +33,9 @@ export const messages = {
     paginationNext: "Próximo",
     paginationPrev: "Anterior",
     paginationOf: "de",
-    consentCookiesMessage: "Este site usa cookies para melhorar sua experiência. Ao usar este site, você concorda com o uso de cookies.",
+    consentCookiesMessage:
+      "Este site usa cookies para melhorar sua experiência. Ao usar este site, você concorda com o uso de cookies.",
     Accept: "Aceitar",
-    Decline: "Recusar"
+    Decline: "Recusar",
   },
 };

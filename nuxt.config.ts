@@ -44,10 +44,10 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@pinia/nuxt",
   ],
-  
+
   gtag: {
-    initMode: 'manual',
-    id: process.env.GOOGLE_ANALYTICS
+    initMode: "manual",
+    id: process.env.GOOGLE_ANALYTICS,
   },
   plugins: [{ src: "@/plugins/fontawesome.js" }],
 

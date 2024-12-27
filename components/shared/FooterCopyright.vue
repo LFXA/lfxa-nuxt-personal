@@ -1,6 +1,6 @@
 <script>
-import { mapState } from 'pinia'
-import { useFooterStore } from '../store/footer'
+import { mapState } from "pinia";
+import { useFooterStore } from "../store/footer";
 
 export default {
   data: () => {

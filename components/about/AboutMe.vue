@@ -1,6 +1,6 @@
 <script>
-import { mapState } from 'pinia'
-import { useAboutStore } from '../store/about'
+import { mapState } from "pinia";
+import { useAboutStore } from "../store/about";
 
 export default {
   data: () => {

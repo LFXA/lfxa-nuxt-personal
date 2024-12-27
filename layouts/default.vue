@@ -1,7 +1,7 @@
 <template>
   <div
     class="bg-slate-100 mx-auto dark:bg-primary-dark justify-between min-h-screen flex flex-col"
-  >   
+  >
     <ConsentBanner />
     <!-- App header -->
     <AppHeader />
@@ -25,7 +25,7 @@ import feather from "feather-icons";
 import AppHeader from "../components/shared/AppHeader.vue";
 import AppFooter from "../components/shared/AppFooter.vue";
 import BackToTop from "../components/BackToTop.vue";
-import ConsentBanner from '../components/shared/ConsentBanner.vue';
+import ConsentBanner from "../components/shared/ConsentBanner.vue";
 export default {
   components: { AppFooter, BackToTop, AppHeader, ConsentBanner },
   data: () => {
