@@ -1,8 +1,15 @@
 <script setup lang="ts">
+import { useBlogStore } from "@/store/blog";
+
 const route = useRoute();
 const localePath = useLocalePath();
-const slug = route.params.slug;
 const { locale } = useI18n();
+
+const store = useBlogStore();
+const slug = route.params.slug as string;
+
+// Make `post` reactive
+const post = ref(null);
 
 onBeforeRouteLeave(async (to, from, next) => {
   if (
@@ -17,20 +24,20 @@ onBeforeRouteLeave(async (to, from, next) => {
   next();
 });
 
-const { data: post, pending } = await useFetch(
-  "https://dev.to/api/articles/lfxa/" + slug,
-  { lazy: true, server: false },
-);
+
+onMounted(async () => {
+    post.value = await store.fetchPostBySlug(slug);
+});
 </script>
 <template>
   <div
-    v-if="!post || pending"
+    v-if="!post || store.pending"
     class="h-screen flex flex-col items-center container justify-center center text-primary-dark dark:text-primary-light"
   >
     <p>{{ $t("blog.withoutPost") }}</p>
   </div>
   <div
-    v-else-if="post && !pending"
+    v-else-if="post && !store.pending"
     class="max-w-3xl px-4 sm:px-6 xl:max-w-5xl container m-auto mb-10"
   >
     <article>

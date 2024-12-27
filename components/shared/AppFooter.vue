@@ -1,5 +1,6 @@
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'pinia'
+import { useFooterStore } from '../store/footer'
 import FooterCopyright from "./FooterCopyright.vue";
 export default {
   components: { FooterCopyright },
@@ -9,7 +10,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["copyrightDate", "socialProfiles"]),
+    ...mapState(useFooterStore, ["copyrightDate", "socialProfiles"]),
   },
 };
 </script>

@@ -74,7 +74,7 @@ const tags = computed(() => {
 <template>
   <div
     v-if="filteredBlogPosts?.length"
-    class="grid grid-cols-6 container md:grid-flow-col grid-flow-row justify-items-center mb-3 p-6 md:px-0"
+    class="grid grid-cols-6 min-h-screen container md:grid-flow-col grid-flow-row justify-items-center mb-3 p-6 md:px-0"
   >
     <TransitionGroup name="post">
       <BlogPostListItem
@@ -95,12 +95,6 @@ const tags = computed(() => {
       @next-page="currentPage++"
       @prev-page="currentPage--"
     />
-  </div>
-  <div
-    v-else
-    class="h-screen flex flex-col items-center container justify-center center text-primary-dark dark:text-primary-light"
-  >
-    <p>{{ $t("blog.withoutPosts") }}</p>
   </div>
 </template>
 <style scoped>

@@ -1,12 +1,13 @@
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'pinia'
+import { useAboutStore } from '../store/about'
 
 export default {
   data: () => {
     return {};
   },
   computed: {
-    ...mapState(["aboutMe"]),
+    ...mapState(useAboutStore, ["aboutMe"]),
   },
 };
 </script>

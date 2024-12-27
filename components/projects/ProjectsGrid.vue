@@ -1,5 +1,5 @@
 <script>
-import { mapState } from "vuex";
+import { mapState } from "pinia";
 import feather from "feather-icons";
 
 export default {

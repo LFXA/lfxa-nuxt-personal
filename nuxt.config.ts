@@ -42,6 +42,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils/module",
     "@nuxt/image",
     "nuxt-gtag",
+    "@pinia/nuxt",
   ],
   
   gtag: {
