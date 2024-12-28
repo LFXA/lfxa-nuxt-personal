@@ -43,7 +43,7 @@ const filteredBlogPosts = computed(() => {
 });
 
 const totalPages = computed(() =>
-  Math.ceil(props.posts.length / props.postPerPage),
+  Math.ceil( props.posts.length / props.postPerPage),
 );
 
 const tags = computed(() => {
@@ -87,13 +87,13 @@ const tags = computed(() => {
   
     </TransitionGroup>
     <BlogTagList
-      class="md:row-span-3 row-span-1 col-span-6 md:col-span-2"
+      class="md:row-span-2 row-span-1 col-span-6 md:col-span-2"
       :tags="tags"
     />
  
   </div>
   <SharedPagination
-      v-show="totalPages > 1"
+      v-show="totalPages > 1 && filteredBlogPosts.length > 5"
       :current-page="currentPage"
       :total-pages="totalPages"
       @next-page="currentPage++"
