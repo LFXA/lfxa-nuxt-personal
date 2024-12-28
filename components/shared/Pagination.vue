@@ -12,9 +12,9 @@ defineProps({
 </script>
 <template>
   <div
-    class="space-y-2 pt-6 pb-8 md:space-y-5 text-primary-dark dark:text-primary-light"
+    class="text-primary-dark dark:text-primary-light"
   >
-    <nav class="flex justify-between">
+    <nav class="flex justify-around">
       <button
         rel="previous"
         :class="{ 'cursor-auto disabled:opacity-50': !prevPage }"

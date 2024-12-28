@@ -39,7 +39,7 @@ export const useBlogStore = defineStore("blog", {
         this.pending = true;
         try {
           const response = await fetch(
-            "https://dev.to/api/articles?username=lfxa&state=all",
+            `https://dev.to/api/articles?username=lfxa&state=all`,
           );
           const data = await response.json();
           this.setPostsView(data);

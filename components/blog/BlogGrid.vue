@@ -43,7 +43,7 @@ const filteredBlogPosts = computed(() => {
 });
 
 const totalPages = computed(() =>
-  Math.ceil(filteredBlogPosts.value.length / props.postPerPage),
+  Math.ceil(props.posts.length / props.postPerPage),
 );
 
 const tags = computed(() => {
@@ -72,6 +72,7 @@ const tags = computed(() => {
 </script>
 
 <template>
+    <div>
   <div
     v-if="filteredBlogPosts?.length"
     class="grid grid-cols-6 min-h-screen container md:grid-flow-col grid-flow-row justify-items-center mb-3 p-6 md:px-0"
@@ -83,12 +84,15 @@ const tags = computed(() => {
         :featured="filteredBlogPosts[0].id === post.id"
         :post="post"
       />
+  
     </TransitionGroup>
     <BlogTagList
-      class="md:row-span-2 row-span-1 col-span-6 md:col-span-2"
+      class="md:row-span-3 row-span-1 col-span-6 md:col-span-2"
       :tags="tags"
     />
-    <SharedPagination
+ 
+  </div>
+  <SharedPagination
       v-show="totalPages > 1"
       :current-page="currentPage"
       :total-pages="totalPages"
