@@ -173,19 +173,17 @@
           </client-only>
         </button>
 
-        <select
-          class="content-wrapper bg-primary-light dark:bg-ternary-dark text-ternary-dark dark:text-ternary-light dark:hover:text-primary-light"
+          <select
+            class="content-wrapper bg-primary-light dark:bg-ternary-dark text-ternary-dark dark:text-ternary-light dark:hover:text-primary-light"
           @change="$i18n.setLocale($event.target.value)"
-        >
-          <option
-            v-for="local in $i18n.locales"
-            :key="local.code"
-            :value="local.code"
-            :selected="$i18n.locale == local.code"
           >
-            {{ $t(local.name) }}
-          </option>
-        </select>
+            <option v-for="local in locales"
+             :key="local.code" 
+             :value="local.code"
+             :selected="locale == local.code">
+              {{  t(local.name) }}
+            </option>
+          </select>
       </div>
     </div>
   </nav>
@@ -194,6 +192,10 @@
 import AppNavigation from "./AppNavigation.vue";
 const localePath = useLocalePath();
 const colorMode = useColorMode();
+const { locale, locales, t } = useI18n();
+
+
+const switchLocalePath = useSwitchLocalePath();
 </script>
 <script>
 export default {

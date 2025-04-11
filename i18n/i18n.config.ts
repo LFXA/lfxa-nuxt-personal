@@ -1,4 +1,4 @@
-import { messages } from "./i18n/index";
+import { messages } from "./index";
 
 export default defineI18nConfig(() => ({
   warnHtmlMessage: false,

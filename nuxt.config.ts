@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     head: {
       title: "LFXA personal.",
       htmlAttrs: {
-        lang: "en",
+        lang: "en-US",
       },
       meta: [
         { charset: "utf-8" },
@@ -72,7 +72,7 @@ export default defineNuxtConfig({
       {
         code: "pt-BR",
         name: "menu.portuguese",
-      },
+      }
     ],
     vueI18n: "./i18n.config.ts",
   },
