@@ -171,7 +171,7 @@ const createGraph = async () => {
     { from: 4, to: 1 },
   ]);
 
-    if(store.postsView === undefined){
+    if(store.postsView === undefined || store.postsView.length == 0){
       await store.fetchPosts();
     }
 
@@ -283,9 +283,7 @@ if (!existingNode) {
 
 onMounted(async () => {
   await createGraph();
-  // Theme reactive update
   watchEffect(async () => {
-    // Only update graph if it's already created and DOM is ready
     if (network.value && networkContainer.value) {
       await createGraph();
     }
@@ -293,7 +291,7 @@ onMounted(async () => {
 });
 
 watch(colorMode, () => {
-  clearHighlights();       // clear styles
+  clearHighlights();
 });
   </script>
   
