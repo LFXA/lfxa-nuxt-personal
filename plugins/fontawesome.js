@@ -5,6 +5,7 @@ import {
   faMoon,
   faBars,
   faClose,
+  faShareNodes
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faDev,
@@ -24,6 +25,7 @@ library.add(
   faMoon,
   faBars,
   faClose,
+  faShareNodes
 );
 
 // This is important, we are going to let Nuxt worry about the CSS

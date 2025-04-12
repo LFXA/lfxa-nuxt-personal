@@ -139,7 +139,7 @@
 
       <!-- Header right section buttons -->
       <div
-        class="sm:flex-row justify-between items-center flex-col md:flex-row"
+        class="sm:flex-row justify-between items-center flex-col md:flex-row py-3"
       >
         <!-- Theme switcher large screen -->
         <button
@@ -186,9 +186,14 @@
           </select>
           <NuxtLink :to="localePath({ name: 'graph' })" 
           
-            class="text-primary-dark hover:text-slate-400 dark:text-primary-light dark:hover:text-cyan-700 p-3"
+            class="text-primary-dark hover:text-slate-400 dark:text-primary-light dark:hover:text-cyan-700 break-keep whitespace-nowrap mx-5" 
             :class="{  'nuxt-link-active': route.path.includes('graph')}"
             >
+            
+            <font-awesome-icon
+              icon="share-nodes"
+              class="text-xl w-4 sm:w-4 h-3 sm:h-2"
+            />
             Page Graph
           </NuxtLink>
       </div>
