@@ -49,11 +49,7 @@ export default {
   },
   methods: {
     isRouteActive(id) {
-      if (this.$route.path.includes(id.toLowerCase())) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.$route.path.includes(id.toLowerCase());
     },
     capitalizeFirstLetter(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);

@@ -184,18 +184,25 @@
               {{  $t(local.name) }}
             </option>
           </select>
+          <NuxtLink :to="localePath({ name: 'graph' })" 
+          
+            class="text-primary-dark hover:text-slate-400 dark:text-primary-light dark:hover:text-cyan-700 p-3"
+            :class="{  'nuxt-link-active': route.path.includes('graph')}"
+            >
+            Page Graph
+          </NuxtLink>
       </div>
     </div>
   </nav>
 </template>
 <script setup>
 import AppNavigation from "./AppNavigation.vue";
+
+const route = useRoute();
 const localePath = useLocalePath();
 const colorMode = useColorMode();
 const { locale, locales, setLocale } = useI18n();
 
-
-const switchLocalePath = useSwitchLocalePath();
 </script>
 <script>
 export default {
