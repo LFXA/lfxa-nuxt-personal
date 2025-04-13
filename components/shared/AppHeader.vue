@@ -194,7 +194,7 @@
               icon="share-nodes"
               class="text-xl w-4 sm:w-4 h-3 sm:h-2"
             />
-            Page Graph
+            {{$t('menu.linkIdeas')}}
           </NuxtLink>
       </div>
     </div>

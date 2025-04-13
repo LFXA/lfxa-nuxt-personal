@@ -5,6 +5,7 @@ export const menuPTBR = {
   blog: "Blog",
   portuguese: "Português (Brasil)",
   english: "Inglês",
+  linkIdeas: "Ligar Ideias"
 };
 
 export const menuENUS = {
@@ -14,4 +15,5 @@ export const menuENUS = {
   about: "About",
   portuguese: "Portuguese (Brazil)",
   english: "English",
+  linkIdeas: "Link Ideas"
 };

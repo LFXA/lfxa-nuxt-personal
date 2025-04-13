@@ -1,10 +1,11 @@
 export const graphPTBR = {
     nodeProgramming: "Programação",
     nodePersonal: "Pessoal",
-
+    nodeAI: "IA"
   };
   
   export const graphENUS = {
     nodeProgramming: "Programming",
-    nodePersonal: "Personal"
+    nodePersonal: "Personal",
+    nodeAI: "AI"
   };
