@@ -1,7 +1,7 @@
 // composables/useGraph.js
 import { ref } from 'vue';
 import { DataSet, Network } from 'vis-network/standalone';
-const { locale } = useI18n();
+
 export const useGraph = (networkContainer, visConfig) => {
   const nodes = new DataSet();
   const edges = new DataSet();
@@ -44,7 +44,7 @@ export const useGraph = (networkContainer, visConfig) => {
     });
   };
 
-  const manageHighlight = () => {
+  const manageHighlight = (locale) => {
     const theme = visConfig.getThemeColors();
     network.value.on("click", function (params) {
       if (params.nodes.length > 0) {

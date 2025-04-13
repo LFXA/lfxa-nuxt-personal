@@ -102,7 +102,7 @@ if (!existingNode) {
     const options = visConfig.getOptions();
 
   createGraph(data, options);
-  manageHighlight();
+  manageHighlight(locale);
 }
 
 onMounted(async () => {
