@@ -42,6 +42,10 @@ const filteredBlogPosts = computed(() => {
     );
 });
 
+const totalPages = computed(() =>
+  Math.ceil( filteredBlogPosts?.length / props.postPerPage),
+);
+debugger;
 const tags = computed(() => {
   const tagCounts = {};
   // add lang filter
@@ -89,7 +93,7 @@ const tags = computed(() => {
  
   </div>
   <SharedPagination
-      v-show="Math.ceil(filteredBlogPosts.length / this.postPerPage) > 1 && filteredBlogPosts.length > 5"
+      v-show="totalPages > 1 && filteredBlogPosts.length > 5"
       :current-page="currentPage"
       :total-pages="Math.ceil(filteredBlogPosts.length / this.postPerPage)"
       @next-page="currentPage++"
