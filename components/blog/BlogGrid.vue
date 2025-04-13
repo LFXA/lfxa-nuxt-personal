@@ -89,9 +89,9 @@ const tags = computed(() => {
  
   </div>
   <SharedPagination
-      v-show="filteredBlogPosts.length / this.postPerPage > 1 && filteredBlogPosts.length > 5"
+      v-show="Math.ceil(filteredBlogPosts.length / this.postPerPage) > 1 && filteredBlogPosts.length > 5"
       :current-page="currentPage"
-      :total-pages="filteredBlogPosts.length / this.postPerPage"
+      :total-pages="Math.ceil(filteredBlogPosts.length / this.postPerPage)"
       @next-page="currentPage++"
       @prev-page="currentPage--"
     />
