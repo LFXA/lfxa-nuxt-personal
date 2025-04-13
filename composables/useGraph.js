@@ -1,7 +1,7 @@
 // composables/useGraph.js
 import { ref } from 'vue';
 import { DataSet, Network } from 'vis-network/standalone';
-
+const { locale } = useI18n();
 export const useGraph = (networkContainer, visConfig) => {
   const nodes = new DataSet();
   const edges = new DataSet();
