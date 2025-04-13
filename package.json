@@ -21,7 +21,8 @@
     "feather-icons": "^4.28.0",
     "js-cookie": "^3.0.5",
     "pinia": "^2.3.0",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "vis-network": "^9.1.9"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.7.0",
