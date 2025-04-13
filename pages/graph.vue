@@ -89,7 +89,7 @@ if (!existingNode) {
         (e.to === fixedTagNode.id && e.from === existingNode.id),
     }).length > 0;
 
-    if (!edgeExists && !isFixed) {
+    if (!edgeExists && fixedTagNode.id != existingNode.id) {
       edges.add({
         from: fixedTagNode.id,
         to: existingNode.id,
