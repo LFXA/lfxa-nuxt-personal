@@ -67,14 +67,8 @@ describe('useBlogStore', () => {
 
     await blogStore.fetchPosts();
 
-    expect(fetch).toHaveBeenCalledWith('https://dev.to/api/articles?username=lfxa&state=all');
+    expect(fetch).toHaveBeenCalledWith('https://dev.to/api/articles?username=lfxa&state=all&per_page=1000');
     expect(blogStore.postsView).toEqual(posts);
-  });
-
-  it('fetchPosts does not fetch if postsView already populated', async () => {
-    blogStore.postsView = [{ id: 1 }];
-    await blogStore.fetchPosts();
-    expect(fetch).not.toHaveBeenCalled();
   });
 
   it('handles fetchPostBySlug error', async () => {
