@@ -52,20 +52,23 @@ const createGraphData = async () => {
     filteredPosts.forEach(post => {
       const tagList = post.tag_list;
       // Find the tag that exists in fixedNodes
-      const fixedTagNode = tagList
-      .map(tag => {
-        return fixedNodes.find(fixedNode =>
-          fixedNode.tag === tag || fixedNode.tagPt === tag || fixedNode.tagEn === tag
+      const fixedTagNodes = tagList.map(tag => {
+        return fixedNodes.find(
+          fixedNode =>
+            fixedNode.tag === tag || fixedNode.tagPt === tag || fixedNode.tagEn === tag
         );
-      })
-      .find(Boolean);
+      }).filter(Boolean);
 
-    tagList.forEach(tag => {
-      const isFixed = (
-        fixedTagNode.tag === tag ||
-        fixedTagNode.tagPt === tag ||
-        fixedTagNode.tagEn === tag
-      );
+      tagList.forEach(tag => {
+        fixedTagNodes.forEach(fixedTagNode => {
+          const isFixed =
+            fixedTagNode.tag === tag ||
+            fixedTagNode.tagPt === tag ||
+            fixedTagNode.tagEn === tag;
+          if (isFixed) {
+            return; // Skip processing this tag if it's directly associated with a fixed node
+          }
+        
 
       let existingNode = nodes.get({
   filter: (n) => n.tag === tag || n.tagPt === tag || n.tagEn === tag
@@ -81,21 +84,25 @@ if (!existingNode) {
   nodes.add(existingNode);
   nodeId++;
 }
+      // Check if edge already exists between fixedTagNode and this tag node
+      const edgeExists = edges.get({
+        filter: (e) =>
+          (e.from === fixedTagNode.id && e.to === existingNode.id) ||
+          (e.to === fixedTagNode.id && e.from === existingNode.id),
+      }).length > 0;
 
-    // Check if edge already exists between fixedTagNode and this tag node
-    const edgeExists = edges.get({
-      filter: (e) =>
-        (e.from === fixedTagNode.id && e.to === existingNode.id) ||
-        (e.to === fixedTagNode.id && e.from === existingNode.id),
-    }).length > 0;
+       const isExistingNodeFixed = fixedNodes.some(fixedNode => fixedNode.id === existingNode.id);
+       if(isExistingNodeFixed){
+        return;
+       }
 
-    if (!edgeExists && fixedTagNode.id != existingNode.id) {
-      edges.add({
-        from: fixedTagNode.id,
-        to: existingNode.id,
-      });
-    }
-    });
+      if (!edgeExists && !isFixed) {
+        edges.add({
+          from: fixedTagNode.id,
+          to: existingNode.id,
+        });
+      }
+    });});
     });
     const data = { nodes, edges };
 

@@ -45,7 +45,7 @@ const filteredBlogPosts = computed(() => {
 const totalPages = computed(() =>
   Math.ceil( filteredBlogPosts?.length / props.postPerPage),
 );
-debugger;
+
 const tags = computed(() => {
   const tagCounts = {};
   // add lang filter

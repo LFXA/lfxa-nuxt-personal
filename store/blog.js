@@ -36,12 +36,11 @@ export const useBlogStore = defineStore("blog", {
       }
     },
     async fetchPosts() {
-      if (!this.postsView || this.postsView.length === 0) {
+      if (!this.postsView || this.postsView.length < 8) {
         this.pending = true;
         try {
           const response = await fetch(
-            `https://dev.to/api/articles?username=lfxa&state=all`,
-          );
+              `https://dev.to/api/articles?username=lfxa&state=all&per_page=1000`);
           const data = await response.json();
           this.setPostsView(data);
         } catch (err) {
