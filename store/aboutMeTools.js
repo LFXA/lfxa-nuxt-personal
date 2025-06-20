@@ -24,6 +24,22 @@ export const aboutMeTools = [
         icon: "skill-icons:kafka",
         text: "Apache Kafka",
       },
+      {
+        icon: "skill-icons:graphql-light",
+        text: "GraphQL",
+      },
+      {
+        icon: "skill-icons:golang",
+        text: "Golang",
+      },
+      {
+        icon: "vscode-icons:file-type-shell",
+        text: "Shell script",
+      },
+      {
+        icon: "skill-icons:powershell-light",
+        text: "PowerShell script",
+      },
     ],
   },
   {
@@ -38,6 +54,14 @@ export const aboutMeTools = [
         icon: "skill-icons:tailwindcss-dark",
         text: "Tailwind CSS",
       },
+      {
+        icon: "skill-icons:angular-light",
+        text: "Angular",
+      },
+      {
+        icon: "skill-icons:react-dark",
+        text: "React",
+      },
     ],
   },
   {
@@ -51,6 +75,10 @@ export const aboutMeTools = [
       {
         icon: "skill-icons:postgresql-light",
         text: "PostgreSQL",
+      },
+      {
+        icon: "devicon:microsoftsqlserver",
+        text: "SQL Server",
       },
       {
         icon: "devicon:elasticsearch",
@@ -74,6 +102,26 @@ export const aboutMeTools = [
         icon: "skill-icons:jenkins-light",
         text: "Jenkins",
       },
+      {
+        icon: "devicon:azuredevops",
+        text: "Azure Devops",
+      },  
+      {
+        icon: "vscode-icons:file-type-azurepipelines",
+        text: "Azure Pipelines",
+      },
+      {
+        icon: "material-icon-theme:fastlane",
+        text: "Fasltlane",
+      },
+      {
+        icon: "logos:teamcity",
+        text: "TeamCity",
+      },
+      {
+        icon: "logos:octopus-deploy",
+        text: "Octopus",
+      },
     ],
   },
   {
@@ -92,6 +140,10 @@ export const aboutMeTools = [
         icon: "skill-icons:vscode-dark",
         text: "VS Code",
       },
+      {
+        icon: "vscode-icons:file-type-firebase",
+        text: "Firebase",
+      },
     ],
   },
   {
@@ -101,6 +153,10 @@ export const aboutMeTools = [
       {
         icon: "skill-icons:python-light",
         text: "Python",
+      },
+      {
+        icon: "fluent-emoji-flat:video-game",
+        text: "Games",
       },
       {
         icon: "skill-icons:flutter-light",
