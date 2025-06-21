@@ -42,6 +42,44 @@ export const aboutMeTools = [
       },
     ],
   },
+   {
+    id: uuidv4(),
+    title: "about.toolgroup4",
+    tools: [
+      {
+        icon: "skill-icons:docker",
+        text: "Docker",
+      },
+      {
+        icon: "skill-icons:kubernetes",
+        text: "Kubernetes",
+      },
+      {
+        icon: "skill-icons:jenkins-light",
+        text: "Jenkins",
+      },
+      {
+        icon: "devicon:azuredevops",
+        text: "Azure Devops",
+      },  
+      {
+        icon: "vscode-icons:file-type-azurepipelines",
+        text: "Azure Pipelines",
+      },
+      {
+        icon: "material-icon-theme:fastlane",
+        text: "Fastlane",
+      },
+      {
+        icon: "logos:teamcity",
+        text: "TeamCity",
+      },
+      {
+        icon: "logos:octopus-deploy",
+        text: "Octopus",
+      },
+    ],
+  },
   {
     id: uuidv4(),
     title: "about.toolgroup2",
@@ -83,44 +121,6 @@ export const aboutMeTools = [
       {
         icon: "devicon:elasticsearch",
         text: "Elasticsearch",
-      },
-    ],
-  },
-  {
-    id: uuidv4(),
-    title: "about.toolgroup4",
-    tools: [
-      {
-        icon: "skill-icons:docker",
-        text: "Docker",
-      },
-      {
-        icon: "skill-icons:kubernetes",
-        text: "Kubernetes",
-      },
-      {
-        icon: "skill-icons:jenkins-light",
-        text: "Jenkins",
-      },
-      {
-        icon: "devicon:azuredevops",
-        text: "Azure Devops",
-      },  
-      {
-        icon: "vscode-icons:file-type-azurepipelines",
-        text: "Azure Pipelines",
-      },
-      {
-        icon: "material-icon-theme:fastlane",
-        text: "Fasltlane",
-      },
-      {
-        icon: "logos:teamcity",
-        text: "TeamCity",
-      },
-      {
-        icon: "logos:octopus-deploy",
-        text: "Octopus",
       },
     ],
   },
