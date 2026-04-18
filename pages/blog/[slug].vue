@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useBlogStore } from "@/store/blog";
+import { useBlogStore } from '~/store/blog';
 
 const route = useRoute();
 const localePath = useLocalePath();

@@ -11,7 +11,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useBlogStore } from "../store/blog";
+import { storeToRefs } from 'pinia';
+import { useBlogStore } from '~/store/blog';
+
 const store = useBlogStore();
 const { postsView, pending, error } = storeToRefs(store);
 

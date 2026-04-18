@@ -14,7 +14,7 @@
       :data-content-id="post.id"
     >
       <div v-if="post.cover_image" class="image">
-        <NuxtImg
+        <img
           :src="post.cover_image"
           :alt="post.title"
           width="16"

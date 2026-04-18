@@ -38,9 +38,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
     "@nuxtjs/i18n",
-    "nuxt-icon",
     "@nuxt/test-utils/module",
-    "@nuxt/image",
     "nuxt-gtag",
     "@pinia/nuxt",
   ],
@@ -51,7 +49,36 @@ export default defineNuxtConfig({
   },
   plugins: [{ src: "@/plugins/fontawesome.js" }],
 
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'pinia'],
+        },
+      },
+    },
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: [
+        'feather-icons',
+        'js-cookie',
+        'uuid',
+      ]
+    },
+    css: {
+      devSourcemap: true,
+    },
+    build: {
+      cssMinify: false,
+    },
+  },
+
   i18n: {
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
     customRoutes: "config", // disable custom route with page components
     pages: {
       about: {
@@ -75,6 +102,10 @@ export default defineNuxtConfig({
       }
     ],
     vueI18n: "./i18n.config.ts",
+  },
+
+  nitro: {
+    logLevel: 0, // Suppress all nitro logs including duplicated import warnings
   },
 
   compatibilityDate: "2024-12-24",

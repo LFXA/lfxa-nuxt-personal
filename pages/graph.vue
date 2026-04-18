@@ -5,9 +5,9 @@
   </template>
   
   <script setup>
-  import { useBlogStore } from "../store/blog";
-  import { useVisConfigStore } from "../store/visConfig";
- 
+  import { useBlogStore } from '~/store/blog';
+  import { useVisConfigStore } from '~/store/visConfig';
+
   const store = useBlogStore();
   const { t, locale } = useI18n();
   const visConfig = useVisConfigStore();
