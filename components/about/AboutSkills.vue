@@ -1,12 +1,8 @@
 <script>
 import { mapState } from "pinia";
 import { useAboutStore } from "~/store/about";
-import { Icon } from '@iconify/vue';
 
 export default {
-  components: {
-    Icon,
-  },
   data: () => {
     return {
       // @todo
@@ -41,7 +37,9 @@ export default {
             class="box-border hover:bg-slate-400 h-16 w-full bg-slate-300 dark:bg-cyan-900 hover:dark:bg-cyan-700 shadow-lg rounded-lg justify-self-auto flex justify-center items-center"
           >
             <div class="rounded-lg flex mx-3">
-              <Icon :name="tool.icon" class="flex-shrink-0 h-5 w-5" />
+              <client-only>
+                <Icon :name="tool.icon" class="flex-shrink-0 h-5 w-5" />
+              </client-only>
             </div>
             <span
               class="flex-1 text-md text-ternary-dark dark:text-ternary-light"
