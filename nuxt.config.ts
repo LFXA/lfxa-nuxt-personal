@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: {
-    enabled: false,
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
   },
 
   ssr: true,
@@ -35,34 +39,15 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/i18n",
     "@nuxt/test-utils/module",
+    "nuxt-gtag",
     "@pinia/nuxt",
   ],
-
-  nitro: {
-    logLevel: 0,
-  },
-
-  vite: {
-    optimizeDeps: {
-      include: [
-        'feather-icons', // CJS
-        'js-cookie',
-        'uuid',
-        '@vue/devtools-kit',
-        '@vue/devtools-core',
-        '@fortawesome/fontawesome-svg-core',
-        '@fortawesome/vue-fontawesome',
-        '@iconify/vue',
-        '@fortawesome/free-solid-svg-icons',
-        '@fortawesome/free-brands-svg-icons',
-      ]
-    }
-  },
 
   gtag: {
     initMode: "manual",
     id: process.env.GOOGLE_ANALYTICS,
   },
+  plugins: [{ src: "@/plugins/fontawesome.client.js" }],
 
   build: {
     rollupOptions: {

@@ -1,6 +1,6 @@
 import { library, config } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+// FontAwesome CSS handled by Nuxt (see nuxt.config.ts css array)
 import { Icon } from "@iconify/vue";
 import {
   faSun,
@@ -31,7 +31,7 @@ library.add(
 );
 
 // This is important, we are going to let Nuxt worry about the CSS
-// config.autoAddCss = false;
+config.autoAddCss = false;
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("font-awesome-icon", FontAwesomeIcon);

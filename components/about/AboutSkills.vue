@@ -38,7 +38,7 @@ export default {
           >
             <div class="rounded-lg flex mx-3">
               <client-only>
-                <Icon :name="tool.icon" class="flex-shrink-0 h-5 w-5" />
+                <Icon :icon="tool.icon" class="flex-shrink-0 h-5 w-5" />
               </client-only>
             </div>
             <span
