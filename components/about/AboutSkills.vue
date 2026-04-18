@@ -1,8 +1,12 @@
 <script>
 import { mapState } from "pinia";
 import { useAboutStore } from "~/store/about";
+import { Icon } from '@iconify/vue';
 
 export default {
+  components: {
+    Icon,
+  },
   data: () => {
     return {
       // @todo
