@@ -28,7 +28,7 @@ const createGraphData = async () => {
       type: 'tag',
     },
     { id: 4, label: 'Blog', shape: 'dot', type: 'blog' },
-    { id: 5, label: t('graph.nodeAI'), shape: 'dot', type: 'tag', tagPt: 'ia',tagEn: 'ai' }];
+    { id: 5, label: t('graph.nodeAI'), shape: 'dot', type: 'tag', tagPt: 'ia', tagEn: 'ai' }];
 
     nodes.clear();
     edges.clear();

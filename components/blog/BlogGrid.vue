@@ -1,106 +1,117 @@
 <script setup>
 const route = useRoute();
-
 const { locale } = useI18n();
+
 if (route.query.to !== undefined) {
   const toPost = route.query.to.split(",");
   const index = locale.value === "pt-BR" ? 0 : 1;
   await navigateTo(`/blog/${toPost[index]}`);
 }
+
 watch(
   () => locale.value,
   () => {
     delete route.query.tag;
   },
 );
+
 const props = defineProps({
-  posts: {
-    type: Array,
-  },
-  postPerPage: {
-    default: 5,
-    type: Number,
-  },
+  posts: { type: Array },
+  postPerPage: { default: 6, type: Number },
 });
 
-const currentPage = ref(1);
+const visibleCount = ref(props.postPerPage);
 
-const filteredBlogPosts = computed(() => {
-  return props.posts
-    ?.filter((post) => {
+const allFilteredPosts = computed(() => {
+  return (
+    props.posts?.filter((post) => {
       const postLang = post.canonical_url.split("/")[3];
       const isSameLanguage = postLang === locale.value;
       const hasTagQuery = route.query.tag !== undefined;
-      return (
-        isSameLanguage &&
-        (!hasTagQuery || post.tag_list.includes(route.query.tag))
-      );
-    })
-    .slice(
-      props.postPerPage * (currentPage.value - 1),
-      currentPage.value * props.postPerPage,
-    );
+      return isSameLanguage && (!hasTagQuery || post.tag_list.includes(route.query.tag));
+    }) ?? []
+  );
 });
 
-const totalPages = computed(() =>
-  Math.ceil( filteredBlogPosts?.length / props.postPerPage),
-);
+const visiblePosts = computed(() => allFilteredPosts.value.slice(0, visibleCount.value));
+const hasMore = computed(() => visibleCount.value < allFilteredPosts.value.length);
+
+watch([() => route.query.tag, () => locale.value], () => {
+  visibleCount.value = props.postPerPage;
+});
+
+const sentinel = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting && hasMore.value) {
+        visibleCount.value += props.postPerPage;
+      }
+    },
+    { threshold: 0.1 },
+  );
+
+  watch(sentinel, (el) => {
+    if (el) observer.observe(el);
+  }, { immediate: true });
+
+  onUnmounted(() => observer.disconnect());
+});
 
 const tags = computed(() => {
   const tagCounts = {};
-  // add lang filter
   props.posts?.forEach((post) => {
     const lang = post.canonical_url.split("/")[3];
     post.tag_list.forEach((tag) => {
       const key = tag + ":" + lang;
-      if (tagCounts[key]) {
-        tagCounts[key]++;
-      } else {
-        tagCounts[key] = 1;
-      }
+      tagCounts[key] = (tagCounts[key] ?? 0) + 1;
     });
   });
 
-  const output = [];
-  for (const tagLang in tagCounts) {
-    const key = tagLang.split(":");
-    output.push({ name: key[0], quantity: tagCounts[tagLang], lang: key[1] });
-  }
-  output.sort((a, b) => a.name.localeCompare(b.name));
-  return output;
+  return Object.entries(tagCounts)
+    .map(([key, quantity]) => {
+      const [name, lang] = key.split(":");
+      return { name, quantity, lang };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 });
 </script>
 
 <template>
-    <div>
   <div
-    v-if="filteredBlogPosts?.length"
-    class="grid grid-cols-6 min-h-screen container md:grid-flow-col grid-flow-row justify-items-center mb-3 p-6 md:px-0"
+    v-if="allFilteredPosts.length"
+    class="flex flex-col md:flex-row gap-8 container min-h-screen px-4 md:px-0"
   >
-    <TransitionGroup name="post">
-      <BlogPostListItem
-        v-for="(post, index) in filteredBlogPosts"
-        :key="index"
-        :featured="filteredBlogPosts[0].id === post.id"
-        :post="post"
-      />
-  
-    </TransitionGroup>
-    <BlogTagList
-      class="md:row-span-2 row-span-1 col-span-6 md:col-span-2"
-      :tags="tags"
-    />
- 
-  </div>
-  <SharedPagination
-      v-show="totalPages > 1 && filteredBlogPosts.length > 5"
-      :current-page="currentPage"
-      :total-pages="Math.ceil(filteredBlogPosts.length / 5)"
-      @next-page="currentPage++"
-      @prev-page="currentPage--"
-    />
+    <!-- Posts column -->
+    <div class="flex-1 min-w-0">
+      <TransitionGroup
+        name="post"
+        tag="div"
+        class="grid grid-cols-1 md:grid-cols-4 gap-6"
+      >
+        <BlogPostListItem
+          v-for="(post, index) in visiblePosts"
+          :key="post.id"
+          :featured="index === 0"
+          :post="post"
+        />
+      </TransitionGroup>
+
+      <div ref="sentinel" class="h-10 flex items-center justify-center mt-4">
+        <span v-if="hasMore" class="text-gray-400 dark:text-gray-600 text-sm animate-pulse">
+          ···
+        </span>
+      </div>
+    </div>
+
+    <!-- Sticky tag sidebar -->
+    <aside class="md:w-1/3 flex-shrink-0 md:sticky md:top-20 md:self-start">
+      <BlogTagList :tags="tags" />
+    </aside>
   </div>
 </template>
+
 <style scoped>
 .post-move,
 .post-enter-active,

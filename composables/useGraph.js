@@ -105,20 +105,18 @@ export const useGraph = (networkContainer, visConfig) => {
         const clickedNodeId = params.nodes[0];
         const node = nodes.get(clickedNodeId);
         let link = '';
+        const origin = window.location.origin;
         if (node.type === 'tag') {
-          let tagValue = node.tag === undefined ? false : node.tag;
-
-          if (!tagValue && node.tagEn) {
-            tagValue = node.tagEn;
-          } else if (!tagValue && node.tagPt) {
-            tagValue = node.tagPt;
-          }
+          const lang = locale.value.split('-')[0];
+          const tagValue = lang === 'pt'
+            ? (node.tagPt || node.tag || node.tagEn)
+            : (node.tagEn || node.tag || node.tagPt);
 
           if (tagValue) {
-            link = `https://lfxa.vercel.app/${locale.value}/blog?tag=${tagValue}`;
+            link = `${origin}/${locale.value}/blog?tag=${tagValue}`;
           }
         } else if (node.type === 'blog') {
-          link = `https://lfxa.vercel.app/${locale.value}/blog`;
+          link = `${origin}/${locale.value}/blog`;
         }
 
         if (link) {

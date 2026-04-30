@@ -1,10 +1,10 @@
 <template>
   <NuxtLink
-    :to="'blog/' + post.slug"
+    :to="localePath({ name: 'blog-slug', params: { slug: post.slug } })"
     class="mr-4"
     :class="{
-      'md:col-span-4 col-span-6': featured,
-      'md:col-span-2 xl:col-span-1 row-span-1 col-span-6': !featured,
+      'col-span-1 md:col-span-4': featured,
+      'col-span-1 md:col-span-2 xl:col-span-1': !featured,
     }"
   >
     <article
@@ -52,6 +52,8 @@ type Post = {
   description: string;
   tag_list?: string[];
 };
+
+const localePath = useLocalePath();
 
 defineProps({
   post: {
