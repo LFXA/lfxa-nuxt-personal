@@ -22,7 +22,7 @@
     "feather-icons": "^4.28.0",
     "js-cookie": "^3.0.5",
     "pinia": "^3.0.4",
-    "uuid": "^8.3.2",
+    "uuid": "^14.0.0",
     "vis-network": "^9.1.9"
   },
   "devDependencies": {
